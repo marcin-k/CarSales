@@ -15,4 +15,7 @@ addCar("3" , "ford", "focus", "yellow", "1999", "7-seater", "2", "22", "petrol",
 addCar("4" , "skoda", "fabia", "black", "2015", "coupe", "2", "22", "petrol", "gfdgfd@gmail.com", "54354");
 addCar("5" , "toyota", "aygo", "white", "2013", "hatchback", "2", "22", "petrol", "gfdg@gmail.com", "5435");
 
+//Display the usedCars Table
+
+getAllCarsInDB();
 ?>

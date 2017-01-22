@@ -65,12 +65,46 @@ function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
 }
 
 //******************************** Delete a car from DB ********************************
+
 function deleteCar($id){
     $deleteQuery = "Delete from `CarSales`.`UsedCars` WHERE `id`='$id'";
     executeQuery($deleteQuery, "CarSales");
     
 }
-
 //******************************** Retrieves all cars from DB  ********************************
 
+function getAllCarsInDB(){
+
+    $getAllCars = "SELECT * FROM CarSales.UsedCars";
+    $resultCars = executeQuery($getAllCars, "CarSales");
+
+    if (mysqli_num_rows($resultCars) > 0) {
+        echo '<table cellpadding="0" cellspacing="15" class="db-table" border="2px">';
+        echo '<tr><th> ID </th><th> Manufacturer </th><th> Model </th><th> Colour </th>
+                <th> Year </th><th> Type </th><th> Doors </th><th> CC </th><th> Fuel </th>
+                <th> Email </th><th> Phone </th></tr>';
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($resultCars)) {
+            echo '<tr>';
+            echo "<td>$row[id]</td><td>$row[manufacturer]</td><td>$row[model]</td>
+                  <td>$row[colour]</td><td>$row[year]</td><td>$row[type]</td>
+                  <td>$row[doors]</td><td>$row[cc]</td><td>$row[fuel]</td>
+                  <td>$row[email]</td><td>$row[phone]</td>";
+            echo '</tr>';
+        }
+
+    }
+    else {
+        echo "0 results";
+    }
+}
+
+//******************************** Update a record  ********************************
+
+function update($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone){
+    $updateQuery = "UPDATE `CarSales`.`UsedCars` SET `manufacturer`='$manufacturer', `model`='$model', 
+                    `colour`='$colour', `year`='$year', `type`='$type', `doors`='$doors', `cc`='$cc', 
+                    `fuel`='$fuel', `email`='$email', `phone`='$phone' WHERE `id`='$id'";
+    executeQuery($updateQuery, "CarSales");
+}
 ?>
