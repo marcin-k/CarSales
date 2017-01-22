@@ -15,19 +15,20 @@ function executeQuery($query, $schema){
         die("Connection failed: " . mysqli_connect_error());
     }
     $result = mysqli_query($conn, $query);
-    if((!$result)){
-        echo "<h2>SQL Error </h2></br>";
-    }
+    //if((!$result)){
+    //    echo "<h2>SQL Error </h2></br>";
+    //}
     return $result;
     mysqli_close($conn);
 }
-//---------------------------------------------------------------------------------------
+//******************************** Validate Login ********************************
+
 //Page would call that method should validate that parameters are set:
 // if(isset($_POST["login"]))
 // if(isset($_POST["password"]))
 function validateLogin($username, $password){
     $toReturn="";
-    $sql = "SELECT * FROM Admins WHERE login ='$username'";
+    $sql = "SELECT * FROM `CarSales`.`Admins` WHERE login ='$username'";
     $result = executeQuery($sql, "CarSales");
     //Checks if there is exactly one record for a provided username
     if (mysqli_num_rows($result) <> 1) {
@@ -44,6 +45,32 @@ function validateLogin($username, $password){
     }
     return $toReturn;
 }
-//---------------------------------------------------------------------------------------
+//******************************** Adds new car to DB ********************************
+function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone){
+
+    $checkId = "SELECT * FROM `CarSales`.`UsedCars` WHERE `id`='$id'";
+    $result = executeQuery($checkId, "CarSales");
+    //checks if the record with the provided id already exist in db
+    if(mysqli_num_rows($result) < 1){
+        //adds a record to db
+        $addCar = "INSERT INTO `CarSales`.`UsedCars` (`id`, `manufacturer`, `model`, `colour`, 
+                    `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`) VALUES 
+                    ('$id', '$manufacturer', '$model', '$colour', '$year', '$type',
+                     '$doors', '$cc', '$fuel', '$email', '$phone')";
+        executeQuery($addCar, "CarSales");
+    }
+    else{
+        echo "Car with ID: ".$id." already exist in DB</br>";
+    }
+}
+
+//******************************** Delete a car from DB ********************************
+function deleteCar($id){
+    $deleteQuery = "Delete from `CarSales`.`UsedCars` WHERE `id`='$id'";
+    executeQuery($deleteQuery, "CarSales");
+    
+}
+
+//******************************** Retrieves all cars from DB  ********************************
 
 ?>
