@@ -7,11 +7,11 @@
 
 <!--MAIN START-->
 <main>
-	<section class="col left">
+	<section class="equal left">
 
 	</section>
 
-	<section class="col right">
+	<section class="equal right">
 		
 	</section>
 </main>
