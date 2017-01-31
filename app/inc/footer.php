@@ -15,7 +15,7 @@
 
 </footer>
 
-<script src="_/js/script.js"></script>
+<script src="../_/js/script.js"></script>
 </body>
 </html>
 <!--FOOTER END-->
