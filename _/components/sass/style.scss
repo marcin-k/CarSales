@@ -125,30 +125,35 @@ body > footer {
    line-height:1.1em;
 }
 
-input,
-textarea {
-   background: none;
-   border: solid 1px $font-color-secondary;
+input,select,
+textarea,label,button {
+	 margin: gutter()*4;
+   //background: $theme-primary;
+   border: none;
    color: inherit;
    display: block;
    padding: 0.75em;
    text-decoration: none;
-   width: 100%;
+   width: 100% - gutter()*8;
    outline: 0;
 
    &:focus {
       border-color: $font-color-primary;
    }
 }
-
-label,button {
-   display: block;	
-}
+//
+//label,button {
+//   display: block;	
+//}
 
 form {
    ul {
       list-style-type:none;
    }
+}
+
+.widget{
+	background: $theme-dark;
 }
 
 table {

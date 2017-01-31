@@ -143,6 +143,13 @@ section {
    &#portfolio{
       padding-top:$header-height;
    }
+	form {
+		margin: gutter()*4;
+		padding:gutter()*4;
+	}
+	form.search {
+		
+	}
 }
 
 article {

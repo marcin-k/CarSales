@@ -10,6 +10,10 @@ $(document).ready(function () {
 
 	$('#expand').click(function(){
 			$('#expanded').toggle();
+			
+//			if($this.html() == "More Options"){
+				//$this.html("Less Options");
+//			}
 	})
 
 });
