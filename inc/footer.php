@@ -3,9 +3,9 @@
 
 	<nav>
 		<ul>
-			<a href=""><li>Find Car</li></a>
-			<a href=""><li>About Us</li></a>
-			<a href=""><li>Contact</li></a>
+			<a href="index.php"><li>Find Car</li></a>
+			<a href="about.php"><li>About Us</li></a>
+			<a href="contact.php"><li>Contact</li></a>
 		</ul>
 	</nav>
 
