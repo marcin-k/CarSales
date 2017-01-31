@@ -1,0 +1,256 @@
+// Susy Setup-----------------------------------------
+
+$susy: (
+  container: $container-width,
+  columns: 12,
+  gutters: 1/4,
+  output: isolate,
+  gutter-position: split,
+  last-flow: to,
+  //debug: (image: show),
+  global-box-sizing: border-box,
+);
+
+* {
+   @include border-box-sizing;
+}
+
+.wrap {
+   @include container;
+}
+
+// Header --------------------------------------------
+
+body > header {
+   padding-top:$header-height / 4;
+   padding-bottom:$header-height / 4;
+   position:fixed;
+   z-index: 100;
+   top: 0;
+   left: 0;
+   right: 0;
+
+   .logo, .menu {
+      @include span(6);
+      position: relative;
+      height: $header-height / 2;
+      img {
+         height: $header-height / 2.5;
+      }
+   }
+   .logo{
+      z-index:120;
+      opacity:1;
+      transition: all 0.3s ease;
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      -webkit-transform-style: preserve-3d;
+   }
+
+   .menu {
+		 @include last(6);
+      z-index:120;
+      text-align:right;
+   }
+
+   .menu img {
+      float:right;
+      padding-top:$header-height / 10;
+      padding-bottom:$header-height / 10;
+   }
+
+   nav {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      right: 0;
+      overflow: hidden;
+      z-index: 115;
+      //transition: translateX 0.4s ease-in-out;
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      -webkit-transform-style: preserve-3d;
+      ul {
+         padding:$header-height/4 0 0 0;
+         opacity: 0;
+         transform: translateX(-20px);
+         transition: all 0.4s ease-in-out;
+         -webkit-backface-visibility: hidden;
+         -webkit-perspective: 1000;
+         -webkit-transform-style: preserve-3d;
+         li {
+            display:inline-block;
+            list-style:none;
+            text-align:center;
+            margin: gutter() / 2;
+            a {
+               display:block;
+            }
+         }
+      }
+   }
+
+   &.open {
+      nav {
+         left: 0px;
+         //transition: left 0.1s ease-in-out;
+
+            ul{
+               opacity: 1;
+               transform: translateX(0);
+            }
+         }
+      .logo{
+         z-index:100;
+         opacity:0;
+      }
+   }
+}
+
+// Section --------------------------------------------
+
+main {
+   @include container;
+   padding-top:$header-height;
+   margin-bottom: gutter();
+   article {
+      margin-left: gutter();
+      margin-right: gutter();
+      text-align:center;
+   }
+}
+
+#hero {
+   @include background-cover;
+   position:relative;
+   height:100vh;
+
+   .callout{
+      //margin-top:$header-height/1.75;
+      @include container;
+
+      position:absolute;
+      top:55%;
+      color:#fff;
+      -ms-transform: translate(0,-50%); /* IE 9 */
+      -webkit-transform: translate(0,-50%); /* Safari */
+      transform: translate(0,-50%);
+   }
+}
+
+section {
+   padding-top:$header-height / 3;
+   &#portfolio{
+      padding-top:$header-height;
+   }
+}
+
+article {
+   padding-top:$header-height / 3;
+   header {
+      margin:0 auto;
+      width: span(10 of 12);
+      ul {
+         margin-top:2em;
+         li {
+         display:inline;
+         }
+      }
+   }
+}
+
+.gallery {
+   padding:0;
+   margin-top: gutter();
+   margin-bottom: gutter();
+   background-position: center center;
+   li {
+      @include span(4);
+      list-style:none;
+      margin-top: gutter();
+      margin-bottom: gutter();
+      &:hover {
+         //effect tbd
+         margin-top: gutter() / 2;
+         box-shadow: 2px 2px #dedede;
+         border-left:1px solid #dedede;
+         }
+      p {
+         text-align:center;
+      }
+   }
+   img {
+      width: 100%; // dimensions are mandatory
+      height: 14em; // dimensions are mandatory
+      object-fit: cover;
+      overflow: hidden; // Cuts off the parts of the image poking out
+   }
+}
+
+
+.large {
+   @include span(8);
+}
+.equal {
+   @include span(6);
+}
+.small {
+   @include span(4);
+}
+.full {
+   @include span(12);
+   clear:both;
+}
+
+.left{
+	text-align: left;
+}
+
+.right{
+	text-align: right;	
+}
+
+.center {
+	text-align: center;
+}
+
+img {
+   max-width:100%;
+}
+
+// Footer --------------------------------------------
+
+body > footer {
+   @include container;
+   margin-top:$footer-height / 2;
+   height:$footer-height;
+   ul{
+      padding:0;
+   }
+
+   hr {
+      @include span(12);
+      border:none;
+      border-top: 1px solid #777;
+   }
+
+   nav {
+      @include span(6);
+      ul li {
+         display:inline;
+      }
+      &.quick_links ul {
+      }
+   }
+
+   .madeby {
+      @include span(6);
+      text-align:right;
+   }
+}
+
+// Navigation ----------------------------------------
+
+#expanded {
+	display: none;	
+}

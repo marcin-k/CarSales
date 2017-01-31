@@ -1,0 +1,194 @@
+@import 'partials/normalize';
+@import "font_awesome/font-awesome";
+@import "compass";
+@import "partials/variables";
+@import "susy";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/layout";
+
+html {
+   font-size: 1.1em;
+}
+
+body {
+   background-color:$theme-background;
+}
+
+body, input, select, textarea {
+   color:$font-color-primary;
+   font-family: $font-family-primary;
+   font-weight: 300;
+   letter-spacing: 0.025em;
+   line-height:2em;
+}
+
+ul, ol, dl, table, blockquote {
+    margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6, nav, .menu {
+   //margin: 1.414em 0 0.5em;
+   font-family:$font-family-secondary;
+   font-weight: inherit;
+   line-height: 1.2;
+   color:darken($font-color-primary, 15%);
+   //text-align:center;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+h2 {font-size: 2.827em;}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+h5 {font-size: 1.2em;}
+
+h6 {font-size: 1em;}
+
+small, .font_small {font-size: 0.707em;}
+
+//p { font-size:1.25em; }
+
+a {
+   @include transition-property(color, border-bottom);
+   @include transition-duration(0.2s);
+   @include transition-timing-function(ease-in-out);
+   color:$font-color-accent;
+   text-decoration: none;
+   &.myName {
+      //border-bottom: dotted 1px !important;
+   }
+   &:hover {
+      color:lighten($font-color-accent, 10%);
+      border-bottom: dotted 1px;
+   }
+}
+
+strong, b {
+   font-weight: 600;
+}
+
+blockquote {
+   border-left: solid 0.5em $font-color-secondary;
+   font-style: italic;
+   padding: 1em 0 1em 2em;
+}
+
+code, kbd, pre, samp {
+    font-family: 'Roboto mono', monospace;
+}
+
+body > header {
+   background-color: rgba(255,252,255,0.98);
+   @include transition-property(background-color);
+   @include transition-duration(0.15s);
+   @include transition-timing-function(cubic-bezier(0.455, 0.03, 0.515, 0.955));
+   &.open {
+      background-color:transparent;
+      @include transition-property(background-color);
+      @include transition-duration(0.8s);
+      @include transition-timing-function(cubic-bezier(0.455, 0.03, 0.515, 0.955));
+   }
+   a {
+      color:lighten($font-color-primary, 10%);
+         &:hover {
+            border-bottom: none;
+         }
+   }
+	.logo {
+		 h1,h2,h3,h4,h5,h6 {
+			 line-height: 0;
+		 }
+	}
+   .menu {
+      //text-decoration:overline;
+      text-transform:uppercase;
+      font-size:2em;
+       cursor: pointer;
+   }
+   nav {
+      background-color: rgba(255,252,255,0.98);
+      //border-bottom: 1px solid #eee;
+      ul li {
+         font-size: 1.75em;
+      }
+   }
+}
+
+body > footer {
+   line-height:1.1em;
+}
+
+input,
+textarea {
+   background: none;
+   border: solid 1px $font-color-secondary;
+   color: inherit;
+   display: block;
+   padding: 0.75em;
+   text-decoration: none;
+   width: 100%;
+   outline: 0;
+
+   &:focus {
+      border-color: $font-color-primary;
+   }
+}
+
+label,button {
+   display: block;	
+}
+
+form {
+   ul {
+      list-style-type:none;
+   }
+}
+
+table {
+   width: 100%;
+
+   tbody {
+      tr {
+         border-bottom: solid 1px _palette(border);
+      }
+   }
+
+   td {
+      padding: 0.5em 1em 0.5em 1em;
+   }
+
+   th {
+      font-weight: 400;
+      padding: 0.5em 1em 0.5em 1em;
+      text-align: left;
+   }
+
+   thead {
+      background: $font-color-primary;
+      color: #fff;
+   }
+
+   tfoot {
+   }
+
+   tbody {
+   }
+}
+
+
+audio, canvas, progress, video {
+    width: 100%;
+    height: auto;
+}
+
+#expand {
+	cursor: pointer;
+	color:$font-color-accent;
+}

@@ -1,0 +1,20 @@
+// Mixins
+
+@mixin transition-all() {
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+@mixin background-cover() {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+//@mixin border-box() {
+  //  -webkit-box-sizing: border-box;
+    //-moz-box-sizing: border-box;
+   // box-sizing: border-box;
+//}
