@@ -7,11 +7,26 @@
 
 <!--MAIN START-->
 <main>
-	<section class="equal left">
-
-	</section>
-
-	<section class="equal right">
+	<section>
+<!--
+		
+		<ul>
+			
+			<a href="">
+				<li class="car"><img src="" alt="">
+						<p></p>
+					</img></li>
+				<li class="car"><img src="" alt="">
+						<p></p>
+					</img></li>
+				<li class="car"><img src="" alt="">
+						<p></p>
+					</img></li>
+			</a>
+			
+			
+			</ul>
+-->
 		
 	</section>
 </main>
