@@ -16,3 +16,10 @@ $font-color-accent: #739483;;
 $container-width:1068px;
 $header-height:120px;
 $footer-height: $header-height;
+
+// Breakpoints -------------------------------------------------
+
+$narrow:max-width 480px;
+$small:max-width 800px;
+$medium:max-width 960px;
+$wide:max-width 1200px;

@@ -261,3 +261,39 @@ body > footer {
 #expanded {
 	display: none;	
 }
+
+// Breakpoints ----------------------------------------
+
+@include breakpoint(max-width $container-width) {
+   body > header, main, footer {
+      padding-left: gutter() * 4;
+      padding-right: gutter() * 4;
+   }
+}
+
+@include breakpoint($small) {
+   .large, .equal, .small {
+      @include span(12);
+   }
+   body > header {
+      padding-top:$header-height / 8;
+      padding-bottom:$header-height / 8;
+      .logo, .menu {
+         height: $header-height / 2.5;
+         img, svg {
+            height: $header-height / 2.5;
+         }
+      }
+   }
+	
+   main {
+      padding-top:$header-height - ($header-height / 4);
+   }
+	
+   body > footer {
+      margin-top:$footer-height / 4;
+      span {
+         display:none;
+      }
+   }
+}

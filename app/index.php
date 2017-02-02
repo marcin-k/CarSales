@@ -7,6 +7,7 @@
 
 <!--MAIN START-->
 <main>
+	<h1 class="center">Find your preloved car</h1>
 	<section class="equal left">
 		<form action="" class="search widget">
 			<label for="carMake">Choose car make</label>
@@ -40,7 +41,7 @@
 				<label for="">Price Range</label>
 				<input type="range" id="slider" min="100" value="1000" max="50000" step="100">
 			</div>
-
+			<br/>
 			<button type="button">Submit</button>
 			<span id="expand" class="right">More options</span>
 		</form>
