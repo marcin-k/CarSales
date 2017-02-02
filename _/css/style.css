@@ -3350,33 +3350,34 @@ form ul {
 
 /* line 156, ../components/sass/style.scss */
 .widget {
-  background: #222; }
+  background: #222;
+  color: #FEFEFE; }
 
-/* line 160, ../components/sass/style.scss */
+/* line 161, ../components/sass/style.scss */
 table {
   width: 100%; }
-  /* line 164, ../components/sass/style.scss */
+  /* line 165, ../components/sass/style.scss */
   table tbody tr {
     border-bottom: solid 1px _palette(border); }
-  /* line 169, ../components/sass/style.scss */
+  /* line 170, ../components/sass/style.scss */
   table td {
     padding: 0.5em 1em 0.5em 1em; }
-  /* line 173, ../components/sass/style.scss */
+  /* line 174, ../components/sass/style.scss */
   table th {
     font-weight: 400;
     padding: 0.5em 1em 0.5em 1em;
     text-align: left; }
-  /* line 179, ../components/sass/style.scss */
+  /* line 180, ../components/sass/style.scss */
   table thead {
     background: #777;
     color: #fff; }
 
-/* line 192, ../components/sass/style.scss */
+/* line 193, ../components/sass/style.scss */
 audio, canvas, progress, video {
   width: 100%;
   height: auto; }
 
-/* line 197, ../components/sass/style.scss */
+/* line 198, ../components/sass/style.scss */
 #expand {
   cursor: pointer;
   color: #739483; }
