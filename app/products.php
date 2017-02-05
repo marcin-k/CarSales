@@ -1,7 +1,7 @@
-<?php 
+<?php
 	$title = 'Car Search Results';
 	$description = 'Lorem Ipsum ...';
-	include 'inc/header.php'; 
+	include 'inc/header.php';
 ?>
 <!--GET HEADER-->
 
@@ -9,9 +9,9 @@
 <main>
 	<section>
 <!--
-		
+
 		<ul>
-			
+
 			<a href="">
 				<li class="car"><img src="" alt="">
 						<p></p>
@@ -23,11 +23,11 @@
 						<p></p>
 					</img></li>
 			</a>
-			
-			
+
+
 			</ul>
 -->
-		
+
 	</section>
 </main>
 <!--MAIN END-->
