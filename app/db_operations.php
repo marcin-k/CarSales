@@ -79,18 +79,14 @@ function getAllCarsInDB(){
     $resultCars = executeQuery($getAllCars, "CarSales");
 
     if (mysqli_num_rows($resultCars) > 0) {
-        echo '<table cellpadding="0" cellspacing="15" class="db-table" border="2px">';
-        echo '<tr><th> ID </th><th> Manufacturer </th><th> Model </th><th> Colour </th>
-                <th> Year </th><th> Type </th><th> Doors </th><th> CC </th><th> Fuel </th>
-                <th> Email </th><th> Phone </th></tr>';
         // output data of each row
         while ($row = mysqli_fetch_assoc($resultCars)) {
-            echo '<tr>';
-            echo "<td>$row[id]</td><td>$row[manufacturer]</td><td>$row[model]</td>
-                  <td>$row[colour]</td><td>$row[year]</td><td>$row[type]</td>
-                  <td>$row[doors]</td><td>$row[cc]</td><td>$row[fuel]</td>
-                  <td>$row[email]</td><td>$row[phone]</td>";
-            echo '</tr>';
+            echo '<ul>';
+            echo    "<li class='car'>
+                            $row[manufacturer]"." "."$row[model]
+                            "." "."$row[colour]"." "."$row[year]"." "."$row[type]
+                          </li>";
+            echo '</ul>';
         }
 
     }
@@ -107,4 +103,94 @@ function update($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
                     `fuel`='$fuel', `email`='$email', `phone`='$phone' WHERE `id`='$id'";
     executeQuery($updateQuery, "CarSales");
 }
+
+//****************************** Get 3 most popular types  **************************
+function getTopThree(){
+    //Query counts all the car types and list them in descending order
+    $getTopThree = "SELECT type, COUNT(*) FROM UsedCars GROUP BY type ORDER BY COUNT(*) DESC";
+    $result = executeQuery($getTopThree, "CarSales");
+    if($result!=null){
+        if (mysqli_num_rows($result) > 2) {
+            $numberOfButtons = 3;
+            while ($row = mysqli_fetch_assoc($result)) {
+                if($numberOfButtons>0){
+                    echo "<form name=\"type\" action=\"products.php\" method=\"POST\">";
+                    echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"".$row['type']."\" /></h3>";
+                    $numberOfButtons--;
+                }
+                if($numberOfButtons==0){
+                    echo "</form>";
+                }
+            }
+        }
+    }
+    else {
+        echo "<form name=\"type\"  method=\"POST\">";
+        echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"There are no\" /></h3>";
+        echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"Cars in DB\" /></h3>";
+        echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"At the moment\" /></h3>";
+        echo "</form>";
+
+    }
+
+}
+
+//****************************** Get all cars with specific type  **************************
+    function getSpecificType($type){
+
+        $getAllCars = "SELECT * FROM CarSales.UsedCars WHERE type='$type'";
+        $resultCars = executeQuery($getAllCars, "CarSales");
+
+        if (mysqli_num_rows($resultCars) > 0) {
+            // output data of each row
+            while ($row = mysqli_fetch_assoc($resultCars)) {
+                echo '<ul>';
+                echo    "<li class='car'><a href=\"product.php?id=".$row['id']."\">
+                            $row[manufacturer]"." "."$row[model]
+                            "." "."$row[colour]"." "."$row[year]"." "."$row[type]
+                          </href></li>";
+                echo '</ul>';
+            }
+
+        }
+        else {
+            echo "0 results";
+        }
+    }
+//****************************** Get details of specific car **************************
+    function getDetailsOfSpecificCar($id){
+        $getDetails = "SELECT * FROM CarSales.UsedCars WHERE id='$id'";
+        $result = executeQuery($getDetails, "CarSales");
+        //Checks if there is exactly one record for a provided id
+        if (mysqli_num_rows($result) <> 1) {
+            echo "<h1>Incorrect car ID</h1>";
+        } else {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "Make: $row[manufacturer] </br>
+                      Model: $row[model] </br>
+                      Colour: $row[colour] </br>
+                      Year: $row[year]</br>
+                      Type: $row[type] </br>
+                      No of doors: $row[doors] </br>
+                      Engine size: $row[cc] </br>
+                      Fuel type: $row[fuel] </br>
+                      Contact email: $row[email] </br>
+                      Contact phone: $row[phone] </br>";
+            }
+        }
+    }
+//******************************* Get all manufacturers in DB ************************
+    function getAllMakes(){
+        $getMakes = "SELECT distinct manufacturer FROM UsedCars";
+        $result = executeQuery($getMakes, "CarSales");
+
+        if (mysqli_num_rows($result) < 1) {
+            echo "<option >DB is empty</option>";
+        } else {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<option value=\"".$row['manufacturer']."\">".ucfirst($row['manufacturer'])."</option>";
+            }
+        }
+    }
+
 ?>
