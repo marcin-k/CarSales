@@ -1,13 +1,15 @@
 // Style Variables --------------------------------------------
 
-$theme-background: #FFFCFF;
-$theme-primary: #FFFF66;
+$theme-background: #fffcff;
+$theme-primary: #ff6;
 $theme-dark: #222;
 
+$header-background: rgba(255, 252, 255, .98);
+
 $font-color-primary: #777;
-$font-color-secondary: #F5EEE8;
-$font-color-light:#FEFEFE;
-$font-color-accent: #739483;;
+$font-color-secondary: #f5eee8;
+$font-color-light: #fefefe;
+$font-color-accent: #739483;
 
 $font-family-primary: 'Lato', arial, sans-serif;
 $font-family-secondary: 'Open Sans', arial, sans-serif;
@@ -20,7 +22,7 @@ $footer-height: $header-height;
 
 // Breakpoints -------------------------------------------------
 
-$narrow:max-width 480px;
-$small:max-width 800px;
-$medium:max-width 960px;
-$wide:max-width 1200px;
+$narrow: max-width 480px;
+$small: max-width 800px;
+$medium: max-width 960px;
+$wide: max-width 1200px;
