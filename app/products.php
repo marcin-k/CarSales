@@ -1,33 +1,26 @@
-<?php
+<?php 
 	$title = 'Car Search Results';
 	$description = 'Lorem Ipsum ...';
 	include 'inc/header.php';
+	include "db_operations.php";
 ?>
 <!--GET HEADER-->
 
 <!--MAIN START-->
 <main>
 	<section>
-<!--
+        <?php
+                if(isset($_POST['type'])==false){
+                        echo "<h1>All cars in DB</h1>";
+             getAllCarsInDB();
+         }
+         else{
+             echo "<h1> ".$_POST['type']."</h1>";
+             getSpecificType($_POST['type']);
+         }
 
-		<ul>
-
-			<a href="">
-				<li class="car"><img src="" alt="">
-						<p></p>
-					</img></li>
-				<li class="car"><img src="" alt="">
-						<p></p>
-					</img></li>
-				<li class="car"><img src="" alt="">
-						<p></p>
-					</img></li>
-			</a>
-
-
-			</ul>
--->
-
+         ?>
+		
 	</section>
 </main>
 <!--MAIN END-->

@@ -4,6 +4,7 @@
   $title = 'product';
 	$description =  'Lorem ipsum dolor sit amet';
   include 'inc/header.php';
+	include "db_operations.php";
 ?>
 <!--GET HEADER-->
 
@@ -27,6 +28,15 @@
 	</section>
 
 	<section class="equal">
+    <?php
+        if(isset($_GET['id'])==false){
+            echo "<h1>Incorrect Car ID</h1>";
+        }
+        else{
+            echo "<h1>Car Details:</h1>";
+            getDetailsOfSpecificCar($_GET['id']);
+        }
+    ?>
     <ul class="statistics equal center">
 	    <li>test</li>
 	    <li>test</li>
