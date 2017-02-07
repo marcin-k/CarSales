@@ -161,6 +161,7 @@ button {
   outline: 0;
   padding: .75em;
   text-decoration: none;
+  text-transform: capitalize;
   width: 100% - gutter() * 8;
 
   &:focus {

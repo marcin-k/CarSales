@@ -3339,8 +3339,9 @@ button {
   outline: 0;
   padding: .75em;
   text-decoration: none;
+  text-transform: capitalize;
   width: 93.33333%; }
-  /* line 166, ../components/sass/style.scss */
+  /* line 167, ../components/sass/style.scss */
   input:focus,
   select:focus,
   textarea:focus,
@@ -3348,40 +3349,40 @@ button {
   button:focus {
     border-color: #777; }
 
-/* line 171, ../components/sass/style.scss */
+/* line 172, ../components/sass/style.scss */
 ul,
 ol {
   padding: 0 0 2em; }
 
-/* line 177, ../components/sass/style.scss */
+/* line 178, ../components/sass/style.scss */
 form ul {
   list-style-type: none; }
 
-/* line 182, ../components/sass/style.scss */
+/* line 183, ../components/sass/style.scss */
 .widget {
   background: #222;
   color: #fefefe; }
 
-/* line 187, ../components/sass/style.scss */
+/* line 188, ../components/sass/style.scss */
 table {
   width: 100%; }
-  /* line 191, ../components/sass/style.scss */
+  /* line 192, ../components/sass/style.scss */
   table tbody tr {
     border-bottom: solid 1px _palette(border); }
-  /* line 196, ../components/sass/style.scss */
+  /* line 197, ../components/sass/style.scss */
   table td,
   table th {
     padding: .5em 1em; }
-  /* line 201, ../components/sass/style.scss */
+  /* line 202, ../components/sass/style.scss */
   table th {
     font-weight: 400;
     text-align: left; }
-  /* line 206, ../components/sass/style.scss */
+  /* line 207, ../components/sass/style.scss */
   table thead {
     background: #fffcff;
     color: #777; }
 
-/* line 219, ../components/sass/style.scss */
+/* line 220, ../components/sass/style.scss */
 audio,
 canvas,
 progress,
@@ -3389,7 +3390,7 @@ video {
   height: auto;
   width: 100%; }
 
-/* line 227, ../components/sass/style.scss */
+/* line 228, ../components/sass/style.scss */
 #expand {
   color: #739483;
   cursor: pointer; }
