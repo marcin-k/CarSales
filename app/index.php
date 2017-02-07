@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$title = 'Home';
 	$description = 'Lorem Ipsum ...';
 	include 'inc/header.php';
@@ -40,9 +40,8 @@
 		</form>
 	</section>
 
-	<section class="equal center">
-        <?php getTopThree(); ?>
-
+	<section class="feature equal center">
+      <?php getTopThree(); ?>
 	</section>
 </main>
 <!--MAIN END-->

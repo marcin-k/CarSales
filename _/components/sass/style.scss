@@ -87,7 +87,8 @@ h4,
 h5,
 h6,
 nav,
-.menu {
+.menu,
+.feature {
   color: darken($font-color-primary, 15%);
   font-family: $font-family-secondary;
   font-weight: inherit;
@@ -101,7 +102,8 @@ h1 {
 
 h2 {font-size: 3em;}
 
-h3 {font-size: 2em;}
+h3,
+input[type="submit"] {font-size: 2em;}
 
 h4 {font-size: 1.5em;}
 

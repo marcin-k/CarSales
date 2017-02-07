@@ -3004,58 +3004,59 @@ main {
 /* line 139, ../components/sass/partials/_layout.scss */
 section {
   padding-top: 40px; }
-  /* line 141, ../components/sass/partials/_layout.scss */
-  section#portfolio {
-    padding-top: 120px; }
-  /* line 144, ../components/sass/partials/_layout.scss */
+  /* line 142, ../components/sass/partials/_layout.scss */
   section form {
     margin: 3.33333%;
     padding: 3.33333%; }
+  /* line 148, ../components/sass/partials/_layout.scss */
+  section.feature form {
+    margin: 0;
+    padding: 0; }
 
-/* line 153, ../components/sass/partials/_layout.scss */
+/* line 155, ../components/sass/partials/_layout.scss */
 article {
   padding-top: 40px; }
-  /* line 155, ../components/sass/partials/_layout.scss */
+  /* line 157, ../components/sass/partials/_layout.scss */
   article header {
     margin: 0 auto;
     width: 81.66667%; }
-    /* line 158, ../components/sass/partials/_layout.scss */
+    /* line 160, ../components/sass/partials/_layout.scss */
     article header ul {
       margin-top: 2em; }
 
-/* line 169, ../components/sass/partials/_layout.scss */
+/* line 171, ../components/sass/partials/_layout.scss */
 .gallery li {
   list-style: none; }
-/* line 191, ../components/sass/partials/_layout.scss */
+/* line 193, ../components/sass/partials/_layout.scss */
 .gallery p {
   margin-left: 2em; }
 
-/* line 196, ../components/sass/partials/_layout.scss */
+/* line 198, ../components/sass/partials/_layout.scss */
 .statistics li {
   margin: 1em 0; }
 
-/* line 200, ../components/sass/partials/_layout.scss */
+/* line 202, ../components/sass/partials/_layout.scss */
 .large {
   width: 65%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-/* line 204, ../components/sass/partials/_layout.scss */
+/* line 206, ../components/sass/partials/_layout.scss */
 .equal {
   width: 48.33333%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-/* line 208, ../components/sass/partials/_layout.scss */
+/* line 210, ../components/sass/partials/_layout.scss */
 .small {
   width: 31.66667%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-/* line 212, ../components/sass/partials/_layout.scss */
+/* line 214, ../components/sass/partials/_layout.scss */
 .full {
   width: 98.33333%;
   float: left;
@@ -3063,23 +3064,23 @@ article {
   margin-right: 0.83333%;
   clear: both; }
 
-/* line 217, ../components/sass/partials/_layout.scss */
+/* line 219, ../components/sass/partials/_layout.scss */
 .left {
   text-align: left; }
 
-/* line 221, ../components/sass/partials/_layout.scss */
+/* line 223, ../components/sass/partials/_layout.scss */
 .right {
   text-align: right; }
 
-/* line 225, ../components/sass/partials/_layout.scss */
+/* line 227, ../components/sass/partials/_layout.scss */
 .center {
   text-align: center; }
 
-/* line 229, ../components/sass/partials/_layout.scss */
+/* line 231, ../components/sass/partials/_layout.scss */
 img {
   max-width: 100%; }
 
-/* line 235, ../components/sass/partials/_layout.scss */
+/* line 237, ../components/sass/partials/_layout.scss */
 body > footer {
   max-width: 1068px;
   margin-left: auto;
@@ -3091,10 +3092,10 @@ body > footer {
     content: " ";
     display: block;
     clear: both; }
-  /* line 239, ../components/sass/partials/_layout.scss */
+  /* line 241, ../components/sass/partials/_layout.scss */
   body > footer ul {
     padding: 0; }
-  /* line 243, ../components/sass/partials/_layout.scss */
+  /* line 245, ../components/sass/partials/_layout.scss */
   body > footer hr {
     width: 98.33333%;
     float: left;
@@ -3102,16 +3103,16 @@ body > footer {
     margin-right: 0.83333%;
     border: none;
     border-top: 1px solid #777; }
-  /* line 249, ../components/sass/partials/_layout.scss */
+  /* line 251, ../components/sass/partials/_layout.scss */
   body > footer nav {
     width: 48.33333%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%; }
-    /* line 251, ../components/sass/partials/_layout.scss */
+    /* line 253, ../components/sass/partials/_layout.scss */
     body > footer nav ul li {
       display: inline; }
-  /* line 258, ../components/sass/partials/_layout.scss */
+  /* line 260, ../components/sass/partials/_layout.scss */
   body > footer .madeby {
     width: 48.33333%;
     float: left;
@@ -3119,42 +3120,42 @@ body > footer {
     margin-right: 0.83333%;
     text-align: right; }
 
-/* line 266, ../components/sass/partials/_layout.scss */
+/* line 268, ../components/sass/partials/_layout.scss */
 #expanded {
   display: none; }
 
 @media (max-width: 1068px) {
-  /* line 273, ../components/sass/partials/_layout.scss */
+  /* line 275, ../components/sass/partials/_layout.scss */
   body > header, main, footer {
     padding-left: 3.33333%;
     padding-right: 3.33333%; } }
 @media (max-width: 800px) {
-  /* line 280, ../components/sass/partials/_layout.scss */
+  /* line 282, ../components/sass/partials/_layout.scss */
   .large, .equal, .small {
     width: 98.33333%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%; }
 
-  /* line 283, ../components/sass/partials/_layout.scss */
+  /* line 285, ../components/sass/partials/_layout.scss */
   body > header {
     padding-top: 15px;
     padding-bottom: 15px; }
-    /* line 286, ../components/sass/partials/_layout.scss */
+    /* line 288, ../components/sass/partials/_layout.scss */
     body > header .logo, body > header .menu {
       height: 48px; }
-      /* line 288, ../components/sass/partials/_layout.scss */
+      /* line 290, ../components/sass/partials/_layout.scss */
       body > header .logo img, body > header .logo svg, body > header .menu img, body > header .menu svg {
         height: 48px; }
 
-  /* line 294, ../components/sass/partials/_layout.scss */
+  /* line 296, ../components/sass/partials/_layout.scss */
   main {
     padding-top: 90px; }
 
-  /* line 298, ../components/sass/partials/_layout.scss */
+  /* line 300, ../components/sass/partials/_layout.scss */
   body > footer {
     margin-top: 30px; }
-    /* line 300, ../components/sass/partials/_layout.scss */
+    /* line 302, ../components/sass/partials/_layout.scss */
     body > footer span {
       display: none; } }
 /* line 11, ../components/sass/style.scss */
@@ -3248,43 +3249,45 @@ h4,
 h5,
 h6,
 nav,
-.menu {
+.menu,
+.feature {
   color: #515151;
   font-family: "Open Sans", arial, sans-serif;
   font-weight: inherit;
   line-height: 1.1; }
 
-/* line 97, ../components/sass/style.scss */
+/* line 98, ../components/sass/style.scss */
 h1 {
   font-size: 4em;
   margin-top: 0; }
 
-/* line 102, ../components/sass/style.scss */
+/* line 103, ../components/sass/style.scss */
 h2 {
   font-size: 3em; }
 
-/* line 104, ../components/sass/style.scss */
-h3 {
+/* line 105, ../components/sass/style.scss */
+h3,
+input[type="submit"] {
   font-size: 2em; }
 
-/* line 106, ../components/sass/style.scss */
+/* line 108, ../components/sass/style.scss */
 h4 {
   font-size: 1.5em; }
 
-/* line 108, ../components/sass/style.scss */
+/* line 110, ../components/sass/style.scss */
 h5 {
   font-size: 1.25em; }
 
-/* line 110, ../components/sass/style.scss */
+/* line 112, ../components/sass/style.scss */
 h6 {
   font-size: 1em; }
 
-/* line 112, ../components/sass/style.scss */
+/* line 114, ../components/sass/style.scss */
 small,
 .font-small {
   font-size: .75em; }
 
-/* line 119, ../components/sass/style.scss */
+/* line 121, ../components/sass/style.scss */
 a {
   -moz-transition-property: color, border-bottom;
   -o-transition-property: color, border-bottom;
@@ -3300,30 +3303,30 @@ a {
   transition-timing-function: ease-in-out;
   color: #739483;
   text-decoration: none; }
-  /* line 126, ../components/sass/style.scss */
+  /* line 128, ../components/sass/style.scss */
   a:hover {
     border-bottom: dotted 1px;
     color: #90aa9d; }
 
-/* line 132, ../components/sass/style.scss */
+/* line 134, ../components/sass/style.scss */
 strong,
 b {
   font-weight: 600; }
 
-/* line 137, ../components/sass/style.scss */
+/* line 139, ../components/sass/style.scss */
 blockquote {
   border-left: solid 0.5em #f5eee8;
   font-style: italic;
   padding: 1em 0 1em 2em; }
 
-/* line 143, ../components/sass/style.scss */
+/* line 145, ../components/sass/style.scss */
 code,
 kbd,
 pre,
 samp {
   font-family: 'Roboto mono', monospace; }
 
-/* line 150, ../components/sass/style.scss */
+/* line 152, ../components/sass/style.scss */
 input,
 select,
 textarea,
@@ -3337,7 +3340,7 @@ button {
   padding: .75em;
   text-decoration: none;
   width: 93.33333%; }
-  /* line 164, ../components/sass/style.scss */
+  /* line 166, ../components/sass/style.scss */
   input:focus,
   select:focus,
   textarea:focus,
@@ -3345,40 +3348,40 @@ button {
   button:focus {
     border-color: #777; }
 
-/* line 169, ../components/sass/style.scss */
+/* line 171, ../components/sass/style.scss */
 ul,
 ol {
   padding: 0 0 2em; }
 
-/* line 175, ../components/sass/style.scss */
+/* line 177, ../components/sass/style.scss */
 form ul {
   list-style-type: none; }
 
-/* line 180, ../components/sass/style.scss */
+/* line 182, ../components/sass/style.scss */
 .widget {
   background: #222;
   color: #fefefe; }
 
-/* line 185, ../components/sass/style.scss */
+/* line 187, ../components/sass/style.scss */
 table {
   width: 100%; }
-  /* line 189, ../components/sass/style.scss */
+  /* line 191, ../components/sass/style.scss */
   table tbody tr {
     border-bottom: solid 1px _palette(border); }
-  /* line 194, ../components/sass/style.scss */
+  /* line 196, ../components/sass/style.scss */
   table td,
   table th {
     padding: .5em 1em; }
-  /* line 199, ../components/sass/style.scss */
+  /* line 201, ../components/sass/style.scss */
   table th {
     font-weight: 400;
     text-align: left; }
-  /* line 204, ../components/sass/style.scss */
+  /* line 206, ../components/sass/style.scss */
   table thead {
     background: #fffcff;
     color: #777; }
 
-/* line 217, ../components/sass/style.scss */
+/* line 219, ../components/sass/style.scss */
 audio,
 canvas,
 progress,
@@ -3386,7 +3389,7 @@ video {
   height: auto;
   width: 100%; }
 
-/* line 225, ../components/sass/style.scss */
+/* line 227, ../components/sass/style.scss */
 #expand {
   color: #739483;
   cursor: pointer; }

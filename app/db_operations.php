@@ -53,8 +53,8 @@ function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
     //checks if the record with the provided id already exist in db
     if(mysqli_num_rows($result) < 1){
         //adds a record to db
-        $addCar = "INSERT INTO `CarSales`.`UsedCars` (`id`, `manufacturer`, `model`, `colour`, 
-                    `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`) VALUES 
+        $addCar = "INSERT INTO `CarSales`.`UsedCars` (`id`, `manufacturer`, `model`, `colour`,
+                    `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`) VALUES
                     ('$id', '$manufacturer', '$model', '$colour', '$year', '$type',
                      '$doors', '$cc', '$fuel', '$email', '$phone')";
         executeQuery($addCar, "CarSales");
@@ -69,7 +69,7 @@ function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
 function deleteCar($id){
     $deleteQuery = "Delete from `CarSales`.`UsedCars` WHERE `id`='$id'";
     executeQuery($deleteQuery, "CarSales");
-    
+
 }
 //******************************** Retrieves all cars from DB  ********************************
 
@@ -98,8 +98,8 @@ function getAllCarsInDB(){
 //******************************** Update a record  ********************************
 
 function update($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone){
-    $updateQuery = "UPDATE `CarSales`.`UsedCars` SET `manufacturer`='$manufacturer', `model`='$model', 
-                    `colour`='$colour', `year`='$year', `type`='$type', `doors`='$doors', `cc`='$cc', 
+    $updateQuery = "UPDATE `CarSales`.`UsedCars` SET `manufacturer`='$manufacturer', `model`='$model',
+                    `colour`='$colour', `year`='$year', `type`='$type', `doors`='$doors', `cc`='$cc',
                     `fuel`='$fuel', `email`='$email', `phone`='$phone' WHERE `id`='$id'";
     executeQuery($updateQuery, "CarSales");
 }
@@ -115,7 +115,7 @@ function getTopThree(){
             while ($row = mysqli_fetch_assoc($result)) {
                 if($numberOfButtons>0){
                     echo "<form name=\"type\" action=\"products.php\" method=\"POST\">";
-                    echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"".$row['type']."\" /></h3>";
+                    echo "<input type=\"submit\" class=\"widget\" name=\"type\" value=\"".$row['type']."\" />";
                     $numberOfButtons--;
                 }
                 if($numberOfButtons==0){
