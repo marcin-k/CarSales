@@ -3333,7 +3333,7 @@ textarea,
 label,
 button {
   border: 0;
-  color: inherit;
+  color: #777;
   display: block;
   margin: 3.33333%;
   outline: 0;

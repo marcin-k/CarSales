@@ -155,7 +155,7 @@ textarea,
 label,
 button {
   border: 0;
-  color: inherit;
+  color: $font-color-primary;
   display: block;
   margin: gutter() * 4;
   outline: 0;
