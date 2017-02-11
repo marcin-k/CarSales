@@ -97,23 +97,26 @@ function getTopThree(){
             $numberOfButtons = 3;
             while ($row = mysqli_fetch_assoc($result)) {
                 if($numberOfButtons>0){
+            //----------------------------------------------------------------------------------------------------
                     echo "<form name=\"type\" action=\"products.php\" method=\"POST\">";
                     echo "<input type=\"submit\" class=\"widget\" name=\"type\" value=\"".$row['type']."\" />";
                     $numberOfButtons--;
                 }
                 if($numberOfButtons==0){
                     echo "</form>";
+            //----------------------------------------------------------------------------------------------------
                 }
             }
         }
     }
     else {
-        echo "<form name=\"type\"  method=\"POST\">";
-        echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"There are no\" /></h3>";
-        echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"Cars in DB\" /></h3>";
-        echo "<h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"At the moment\" /></h3>";
-        echo "</form>";
-
+        //----------------------------------------------------------------------------------------------------
+        echo "<form name=\"type\"  method=\"POST\">
+                <h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"There are no\" /></h3>
+                <h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"Cars in DB\" /></h3>
+                <h3><input type=\"submit\" class=\"widget\" name=\"type\" value=\"At the moment\" /></h3>
+              </form>";
+        //----------------------------------------------------------------------------------------------------
     }
 
 }
