@@ -19,6 +19,7 @@ $createUsedCarsTable = "CREATE TABLE `CarSales`.`UsedCars` (`id` varchar(25) NOT
 `model` varchar(45) DEFAULT NULL,`colour` varchar(45) DEFAULT NULL, `year` int(4) DEFAULT NULL, 
 `type` enum('saloon','estate','coupe','hatchback','7-seater') DEFAULT NULL,`doors` int(1) DEFAULT NULL, `cc` int(5) DEFAULT NULL, 
 `fuel` enum('petrol','diesel','gas','electric') DEFAULT NULL, `email` varchar(45) DEFAULT NULL, `phone` int(15) DEFAULT NULL, 
+`price` int(7) DEFAULT NULL, `description` VARCHAR(200) NULL,
 PRIMARY KEY (`id`))";
 executeQuery($createUsedCarsTable, "Creating Used Car Table");
 
@@ -30,8 +31,10 @@ executeQuery($createAdminTable, "Creating Admin Table");
 //adds the admin accounts to admin table
 $addFirstAdmin = "INSERT INTO `CarSales`.`Admins` (`login`, `password`) VALUES ('marcin', 'abc123')";
 $addSecondAdmin = "INSERT INTO `CarSales`.`Admins` (`login`,`password`) VALUES ('mark', 'abc123')";
+$addThirdAdmin = "INSERT INTO `CarSales`.`Admins` (`login`,`password`) VALUES ('anuraj', 'abc123')";
 executeQuery($addFirstAdmin, "Adding First Admin");
-executeQuery($addSecondAdmin, "Adming Second Admin");
+executeQuery($addSecondAdmin, "Adding Second Admin");
+executeQuery($addThirdAdmin, "Adding Third Admin");
 
 //------------------------------------------------------------------------------------------------
 //Method to execute any queries on db

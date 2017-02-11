@@ -46,7 +46,7 @@ function validateLogin($username, $password){
     return $toReturn;
 }
 //******************************** Adds new car to DB ********************************
-function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone){
+function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone, $price, $desc){
 
     $checkId = "SELECT * FROM `CarSales`.`UsedCars` WHERE `id`='$id'";
     $result = executeQuery($checkId, "CarSales");
@@ -54,9 +54,9 @@ function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
     if(mysqli_num_rows($result) < 1){
         //adds a record to db
         $addCar = "INSERT INTO `CarSales`.`UsedCars` (`id`, `manufacturer`, `model`, `colour`,
-                    `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`) VALUES
+                    `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`, `price`, `description`) VALUES
                     ('$id', '$manufacturer', '$model', '$colour', '$year', '$type',
-                     '$doors', '$cc', '$fuel', '$email', '$phone')";
+                     '$doors', '$cc', '$fuel', '$email', '$phone', '$price', '$desc')";
         executeQuery($addCar, "CarSales");
     }
     else{
@@ -74,25 +74,8 @@ function deleteCar($id){
 //******************************** Retrieves all cars from DB  ********************************
 
 function getAllCarsInDB(){
-
     $getAllCars = "SELECT * FROM CarSales.UsedCars";
-    $resultCars = executeQuery($getAllCars, "CarSales");
-
-    if (mysqli_num_rows($resultCars) > 0) {
-        // output data of each row
-        while ($row = mysqli_fetch_assoc($resultCars)) {
-            echo '<ul>';
-            echo    "<li class='car'><a href=\"product.php?id=".$row['id']."\">
-                            $row[manufacturer]"." "."$row[model]
-                            "." "."$row[colour]"." "."$row[year]"." "."$row[type]
-                     </href></li>";
-            echo '</ul>';
-        }
-
-    }
-    else {
-        echo "0 results";
-    }
+    displayListOfCars($getAllCars);
 }
 
 //******************************** Update a record  ********************************
@@ -137,26 +120,10 @@ function getTopThree(){
 
 //****************************** Get all cars with specific type  **************************
     function getSpecificType($type){
-
-        $getAllCars = "SELECT * FROM CarSales.UsedCars WHERE type='$type'";
-        $resultCars = executeQuery($getAllCars, "CarSales");
-
-        if (mysqli_num_rows($resultCars) > 0) {
-            // output data of each row
-            while ($row = mysqli_fetch_assoc($resultCars)) {
-                echo '<ul>';
-                echo    "<li class='car'><a href=\"product.php?id=".$row['id']."\">
-                            $row[manufacturer]"." "."$row[model]
-                            "." "."$row[colour]"." "."$row[year]"." "."$row[type]
-                          </href></li>";
-                echo '</ul>';
-            }
-
-        }
-        else {
-            echo "0 results";
-        }
+        $getCars = "SELECT * FROM CarSales.UsedCars WHERE type='$type'";
+        displayListOfCars($getCars);
     }
+
 //****************************** Get details of specific car **************************
     function getDetailsOfSpecificCar($id){
         $getDetails = "SELECT * FROM CarSales.UsedCars WHERE id='$id'";
@@ -166,7 +133,10 @@ function getTopThree(){
             echo "<h1>Incorrect car ID</h1>";
         } else {
             while ($row = mysqli_fetch_assoc($result)) {
+
+            //-------Right panels of Product page ----------------------
                 echo "<ul class=\"statistics equal center\">
+	                     <li>Price:</li>
 	                     <li>Make:</li>
 	                     <li>Model:</li>
 	                     <li>Colour:</li>
@@ -180,6 +150,7 @@ function getTopThree(){
 	                  </ul>
 
                       <ul class=\"statistics equal center\">
+                         <li>€ $row[price]</li>
                          <li>$row[manufacturer]</li>
                          <li>$row[model]</li>
 	                     <li>$row[colour]</li>
@@ -191,24 +162,78 @@ function getTopThree(){
 	                     <li>$row[email]</li>
 	                     <li>$row[phone]</li>
                       </ul>";
-                }
-        }
-    }
-//******************************* Get all manufacturers in DB ************************
-
-/* Temporally moved to index.php and db.php
-
-    function getAllMakes(){
-        $getMakes = "SELECT distinct manufacturer FROM UsedCars";
-        $result = executeQuery($getMakes, "CarSales");
-
-        if (mysqli_num_rows($result) < 1) {
-            echo "<option >DB is empty</option>";
-        } else {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<option value=\"".$row['manufacturer']."\">".ucfirst($row['manufacturer'])."</option>";
+            //------------------------------------------------------------
+            echo "<article><p>".$row['description']."</p></article>";
             }
         }
     }
-    */
+
+//********************** Displays list of cars for Products page *********************
+    function displayListOfCars($getCarsFromQuery){
+        $resultCars = executeQuery($getCarsFromQuery, "CarSales");
+        if (mysqli_num_rows($resultCars) > 0) {
+            // output data of each row
+            while ($row = mysqli_fetch_assoc($resultCars)) {
+
+                //-------Cell element for Products page ----------------------
+                echo "<ul>
+                         <li class='car'><a href=\"product.php?id=".$row['id']."\">
+                                        $row[manufacturer]"." "."$row[model]
+                                        "." "."$row[colour]"." "."$row[year]"." "."$row[type]
+                          </href></li>
+                      </ul>";
+                //-------------------------------------------------------------
+            }
+        }
+        else {
+            echo "0 results";
+        }
+    }
+
+//*************** Load cars with specified: make, model, max price ********************
+function getMakeModelMaxPrice($make, $model, $maxPrice){
+    $getCars = "SELECT * FROM CarSales.UsedCars where manufacturer='$make' and model='$model' and price<='$maxPrice'";
+    displayListOfCars($getCars);
+}
+
+//*************** Load cars with specified: min year, max price ***********************
+function getMinYearMaxPrice($minYear, $maxPrice){
+    $getCars = "SELECT * FROM CarSales.UsedCars where year>='$minYear' and price<='$maxPrice'";
+    displayListOfCars($getCars);
+}
+
+//*************** Load cars with specified: max year, max price ***********************
+function getMaxYearMaxPrice($maxYear, $maxPrice){
+
+    $getCars = "SELECT * FROM CarSales.UsedCars where year<='$maxYear' and price<='$maxPrice'";
+    displayListOfCars($getCars);
+}
+
+//******** Load cars with specified: make, model, min year, max price ******************
+function getMakeModelMinYearMaxPrice($make, $model, $minYear, $maxPrice){
+
+    $getCars = "SELECT * FROM CarSales.UsedCars where manufacturer='$make' and model='$model'
+                and year>='$minYear' and price<='$maxPrice'";
+    displayListOfCars($getCars);
+}
+//******** Load cars with specified: make, model, max year, max price ******************
+function getMakeModelMaxYearMaxPrice($make, $model, $maxYear, $maxPrice){
+
+    $getCars = "SELECT * FROM CarSales.UsedCars where manufacturer='$make' and model='$model'
+                and year<='$maxYear' and price<='$maxPrice'";
+    displayListOfCars($getCars);
+}
+//*********** Load cars with specified: min year, max year, max price ******************
+function getMinYearMaxYearMaxPrice($minYear, $maxYear, $maxPrice){
+
+    $getCars = "SELECT * FROM CarSales.UsedCars where year>='$minYear' and year<='$maxYear' and price<='$maxPrice'";
+    displayListOfCars($getCars);
+}
+//***** Load cars with specified: make, model, min year, max year, max price ************
+function getMakeModelMinYearMaxYearMaxPrice($make, $model, $minYear, $maxYear, $maxPrice){
+
+    $getCars = "SELECT * FROM CarSales.UsedCars where manufacturer='$make' and model='$model'
+                and year>='$minYear' and year<='$maxYear' and price<='$maxPrice'";
+    displayListOfCars($getCars);
+}
 ?>

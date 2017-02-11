@@ -11,13 +11,10 @@
 	<h1 class="center">Find your preloved car</h1>
 	<section class="equal left">
 		<form action="products.php" class="search widget" method="post">
-
-<!------------------------------------------------------------------------------------->
             <script type="text/javascript" src="jQueryJavaScriptLibrary.js"></script>
             <script type="text/javascript">
                 $(document).ready(function(){
-                    $(".carMake").change(function()
-                    {
+                    $(".carMake").change(function() {
                         var id=$(this).val();
                         var dataString = 'id='+ id;
 
@@ -51,15 +48,20 @@
             <select name="model" id="model" class="carModel">
                 <option selected="selected">--Select Model--</option>
             </select>
-<!------------------------------------------------------------------------------------->
-			<!--Toggle using js-->
+
 			<div id="expanded">
 				<label for="minYear">Min Year</label>
-				<select name="" id="minYear"></select>
+				<select name="minYear" id="minYear">
+                    <option selected="selected">--min year--</option>
+                    <?php for($i = 1999; $i < 2016; $i++){ echo "<option>$i</option>";} ?>
+                </select>
 				<label for="maxYear">Max Year</label>
-				<select name="" id="maxYear"></select>
-				<label for="">Price Range</label>
-				<input type="range" id="slider" min="100" value="1000" max="50000" step="100">
+				<select name="maxYear" id="maxYear">
+                    <option selected="selected">--max year--</option>
+                    <?php for($i = 1999; $i < 2016; $i++){ echo "<option>$i</option>";} ?>
+                </select>
+				<label for="">Max Price</label>
+				<input type="range" name="maxPrice" id="slider" min="1000" value="50000" max="50000" step="1000">
 			</div>
 
 			<br/>
