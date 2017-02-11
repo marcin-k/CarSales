@@ -195,6 +195,9 @@ function getTopThree(){
         }
     }
 //******************************* Get all manufacturers in DB ************************
+
+/* Temporally moved to index.php and db.php
+
     function getAllMakes(){
         $getMakes = "SELECT distinct manufacturer FROM UsedCars";
         $result = executeQuery($getMakes, "CarSales");
@@ -207,5 +210,5 @@ function getTopThree(){
             }
         }
     }
-
+    */
 ?>
