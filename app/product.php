@@ -11,20 +11,17 @@
 <!--MAIN START-->
 <main class="gallery">
 	<section class="equal">
-    <ol>
-      <li class="full">
-        <img src="http://placehold.it/600x460">
-      </li>
-      <li class="small">
-        <img src="http://placehold.it/600x460">
-      </li>
-      <li class="small">
-        <img src="http://placehold.it/600x460">
-      </li>
-      <li class="small">
-        <img src="http://placehold.it/600x460">
-      </li>
-    </ol>
+        <?php
+            $id  = $_GET['id'];
+            //checks if there is a image for a specific car
+            if(file_exists("img/".$id.".jpg")){
+                echo "<img src=\"img\\".$id.".jpg\">";
+            }
+            //displays a default car image if image was not found
+            else{
+                echo "<img src=\"img\\default.jpg\">";
+            }
+        ?>
 	</section>
 
 	<section class="equal">
@@ -33,23 +30,11 @@
             echo "<h1>Incorrect Car ID</h1>";
         }
         else{
-            echo "<h1>Car Details:</h1>";
+            //echo "<h1>Car Details:</h1>";
             getDetailsOfSpecificCar($_GET['id']);
         }
     ?>
-    <ul class="statistics equal center">
-	    <li>test</li>
-	    <li>test</li>
-	    <li>test</li>
-	    <li>test</li>
-	  </ul>
 
-    <ul class="statistics equal center">
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-      <li>test</li>
-    </ul>
 
     <article>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.

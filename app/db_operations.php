@@ -82,10 +82,10 @@ function getAllCarsInDB(){
         // output data of each row
         while ($row = mysqli_fetch_assoc($resultCars)) {
             echo '<ul>';
-            echo    "<li class='car'>
+            echo    "<li class='car'><a href=\"product.php?id=".$row['id']."\">
                             $row[manufacturer]"." "."$row[model]
                             "." "."$row[colour]"." "."$row[year]"." "."$row[type]
-                          </li>";
+                     </href></li>";
             echo '</ul>';
         }
 
@@ -166,17 +166,32 @@ function getTopThree(){
             echo "<h1>Incorrect car ID</h1>";
         } else {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "Make: $row[manufacturer] </br>
-                      Model: $row[model] </br>
-                      Colour: $row[colour] </br>
-                      Year: $row[year]</br>
-                      Type: $row[type] </br>
-                      No of doors: $row[doors] </br>
-                      Engine size: $row[cc] </br>
-                      Fuel type: $row[fuel] </br>
-                      Contact email: $row[email] </br>
-                      Contact phone: $row[phone] </br>";
-            }
+                echo "<ul class=\"statistics equal center\">
+	                     <li>Make:</li>
+	                     <li>Model:</li>
+	                     <li>Colour:</li>
+	                     <li>Year:</li>
+	                     <li>Type:</li>
+	                     <li>No of doors:</li>
+	                     <li>Engine size:</li>
+	                     <li>Fuel type:</li>
+	                     <li>Contact email:</li>
+	                     <li>Contact phone:</li>
+	                  </ul>
+
+                      <ul class=\"statistics equal center\">
+                         <li>$row[manufacturer]</li>
+                         <li>$row[model]</li>
+	                     <li>$row[colour]</li>
+	                     <li>$row[year]</li>
+	                     <li>$row[type]</li>
+	                     <li>$row[doors]</li>
+	                     <li>$row[cc]</li>
+	                     <li>$row[fuel]</li>
+	                     <li>$row[email]</li>
+	                     <li>$row[phone]</li>
+                      </ul>";
+                }
         }
     }
 //******************************* Get all manufacturers in DB ************************

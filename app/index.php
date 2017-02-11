@@ -10,21 +10,48 @@
 <main>
 	<h1 class="center">Find your preloved car</h1>
 	<section class="equal left">
-		<form action="" class="search widget">
-			<label for="carMake">Choose car make</label>
-			<select name="" id="make" class="carMake">
-                <?php getAllMakes(); ?>
-			</select>
+		<form action="products.php" class="search widget" method="post">
 
-			<label for="carModel">Choose car model</label>
-			<select name="" id="" class="carModel">
+<!------------------------------------------------------------------------------------->
+            <script type="text/javascript" src="jQueryJavaScriptLibrary.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $(".carMake").change(function()
+                    {
+                        var id=$(this).val();
+                        var dataString = 'id='+ id;
+
+                        $.ajax({
+                            type: "GET",
+                            url: "carModel.php",
+                            data: dataString,
+                            cache: false,
+                            success: function(html)
+                            {
+                                $(".carModel").html(html);
+                            }
+                        });
+                    });
+                });
+            </script>
+            <label for="carMake">Choose car make</label>
+            <select name="make" id="model" class="carMake">
+                <option selected="selected">--Select Make--</option>
                 <?php
-                    //to be added
+                    include('db.php');
+                    $sql=mysql_query("SELECT distinct manufacturer FROM UsedCars");
+                    while($row=mysql_fetch_array($sql))
+                    {
+                        $id=$row['manufacturer'];
+                        echo '<option value="'.$id.'">'.$id.'</option>';
+                    }
                 ?>
-
-			</select>
-
-
+            </select> <br/><br/>
+            <label for="carModel">Choose car model</label>
+            <select name="model" id="model" class="carModel">
+                <option selected="selected">--Select Model--</option>
+            </select>
+<!------------------------------------------------------------------------------------->
 			<!--Toggle using js-->
 			<div id="expanded">
 				<label for="minYear">Min Year</label>
@@ -34,9 +61,11 @@
 				<label for="">Price Range</label>
 				<input type="range" id="slider" min="100" value="1000" max="50000" step="100">
 			</div>
+
 			<br/>
-			<button type="button">Submit</button>
+			<button type="submit">Submit</button>
 			<span id="expand" class="right">More options</span>
+
 		</form>
 	</section>
 
