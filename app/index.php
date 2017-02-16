@@ -43,7 +43,7 @@
                         echo '<option value="'.$id.'">'.$id.'</option>';
                     }
                 ?>
-            </select> <br/><br/>
+            </select>
             <label for="carModel">Choose car model</label>
             <select name="model" id="model" class="carModel">
                 <option selected="selected">--Select Model--</option>

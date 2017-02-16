@@ -169,13 +169,28 @@ button {
   }
 }
 
+.refine {
+  input,
+  select,
+  textarea,
+  label,
+  button {
+    border: 0;
+    color: $font-color-primary;
+    display: inline-block;
+    margin: gutter();
+    padding: .5em;
+    width: 25% - gutter() * 4;
+  }
+}
+
 ul,
 ol {
   padding: 0 0 2em;
 }
 
 form {
-  ul {
+  ul, .cars ul {
     list-style-type: none;
   }
 }

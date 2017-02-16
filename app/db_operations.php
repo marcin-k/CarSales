@@ -179,12 +179,21 @@ function getTopThree(){
             while ($row = mysqli_fetch_assoc($resultCars)) {
 
                 //-------Cell element for Products page ----------------------
-                echo "<ul>
-                         <li class='car'><a href=\"product.php?id=".$row['id']."\">
+                echo "<li class='widget equal'>
+                          <ul>
+                            <li class='equal'>
+                              <img />
+                            </li>
+                            <li>
+                              <h4>
+                                <a href=\"product.php?id=".$row['id']."\">
                                         $row[manufacturer]"." "."$row[model]
                                         "." "."$row[colour]"." "."$row[year]"." "."$row[type]
-                          </href></li>
-                      </ul>";
+                                </a>
+                              </h4>
+                            </li>
+                          </ul>
+                        </li>";
                 //-------------------------------------------------------------
             }
         }

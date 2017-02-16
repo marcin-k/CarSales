@@ -144,6 +144,11 @@ section {
     padding: gutter() * 4;
   }
 
+  form.refine {
+    margin: 0;
+    padding: 0;
+  }
+
   &.feature {
     form {
       margin: 0;
@@ -168,8 +173,13 @@ article {
   // margin-top: gutter();
   // margin-bottom: gutter();
   // background-position: center center;
+  ul {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
   li {
   //   @include span(4);
+    margin: gutter();
     list-style: none;
   //   margin-top: gutter();
   //   margin-bottom: gutter();
