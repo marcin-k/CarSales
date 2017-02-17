@@ -66,8 +66,15 @@
 	<section class="gallery">
     <ul>
       <?php
+
+          //if url is access from outside index.php
+          if((!isset($_POST['make'])&&!isset($_POST['type']))){
+              echo "<h1>All cars in DB</h1>";
+              getAllCarsInDB();
+          }
+
           //if user selects the type of car (right side menu on index page)
-          if(isset($_POST['type'])==true){
+          elseif(isset($_POST['type'])==true){
               echo "<h1> ".$_POST['type']."</h1>";
               getSpecificType($_POST['type']);
           }

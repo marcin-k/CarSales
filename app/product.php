@@ -13,6 +13,9 @@
 
         <?php
         echo "<section class=\"equal\">";
+            //TODO: add and path allowing to search the root (make or model same as selected one)
+            echo "test";
+
             $id  = $_GET['id'];
             //checks if there is a image for a specific car
             if(file_exists("img/".$id.".jpg")){

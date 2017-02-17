@@ -139,31 +139,22 @@ function getTopThree(){
 
             //-------Right panels of Product page ----------------------
                 echo "<ul class=\"statistics equal center\">
-	                     <li>Price:</li>
-	                     <li>Make:</li>
-	                     <li>Model:</li>
-	                     <li>Colour:</li>
-	                     <li>Year:</li>
-	                     <li>Type:</li>
-	                     <li>No of doors:</li>
-	                     <li>Engine size:</li>
-	                     <li>Fuel type:</li>
-	                     <li>Contact email:</li>
-	                     <li>Contact phone:</li>
+	                     <li>Price:</li><li> € $row[price]</li>
+	                     <li>Make:</li><li> $row[manufacturer]</li>
+	                     <li>Model:</li><li>$row[model]</li>
+	                     <li>Colour</li><li> $row[colour]:</li>
+	                     <li>Year:</li><li> $row[year]</li>
+	                    
 	                  </ul>
 
                       <ul class=\"statistics equal center\">
-                         <li>€ $row[price]</li>
-                         <li>$row[manufacturer]</li>
-                         <li>$row[model]</li>
-	                     <li>$row[colour]</li>
-	                     <li>$row[year]</li>
-	                     <li>$row[type]</li>
-	                     <li>$row[doors]</li>
-	                     <li>$row[cc]</li>
-	                     <li>$row[fuel]</li>
-	                     <li>$row[email]</li>
-	                     <li>$row[phone]</li>
+                         <li>Type:</li><li> $row[type]</li>
+	                     <li>No of doors:</li><li> $row[doors]</li>
+	                     <li>Engine size:</li><li> $row[cc]</li>
+	                     <li>Fuel type:</li><li> $row[fuel]</li>
+	                     <li>Email:</li><li> $row[email]</li>
+	                     <li>Phone:</li><li> $row[phone]</li>
+	             
                       </ul>";
             //------------------------------------------------------------
             echo "<article><p>".$row['description']."</p></article>";
@@ -182,7 +173,7 @@ function getTopThree(){
                 echo "<li class='widget equal'>
                           <ul>
                             <li class='equal'>
-                              <img />
+                              <img src=\"img\\".$row['id'].".jpg\"/>
                             </li>
                             <li>
                               <h4>
