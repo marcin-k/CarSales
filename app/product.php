@@ -13,7 +13,6 @@
 
         <?php
         echo "<section class=\"equal\">";
-
         //-----------------------------------------------------------------------------------------
         //TODO: move css outside this file, change the styling so the buttons align next to one another
         echo "
