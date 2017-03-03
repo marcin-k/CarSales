@@ -17,6 +17,8 @@ $susy: (
 
 .wrap {
   @include container;
+  
+  position: relative;
 }
 
 // Header --------------------------------------------
@@ -115,7 +117,7 @@ body > header {
 
 main {
   @include container;
-  // padding-top: $header-height / 6;
+  padding-top: $header-height / 6;
   margin-bottom: gutter();
 }
 

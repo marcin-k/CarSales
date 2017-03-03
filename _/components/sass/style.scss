@@ -162,7 +162,7 @@ textarea,
 label,
 button {
   border: 0;
-  color: $font-color-primary;
+  // color: $font-color-primary;
   display: block;
   margin: gutter() * 4;
   outline: 0;
@@ -183,17 +183,31 @@ button {
   label,
   button {
     border: 0;
-    color: $font-color-primary;
+    // color: $font-color-primary;
     display: inline-block;
     margin: gutter();
     padding: .5em;
     width: 25% - gutter() * 4;
   }
 }
+label{
+  padding-left: 0em;
+}
 
 ul,
 ol {
   padding: 0 0 2em;
+}
+
+dl {
+    text-transform: capitalize;
+  dt {
+      font-weight: bold;
+  }
+
+  dd {
+    margin: 0 0 .5em;
+  }
 }
 
 form {

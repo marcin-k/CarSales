@@ -9,7 +9,7 @@
 <!--GET HEADER-->
 
 <!--MAIN START-->
-<main class="gallery">
+<main>
 
         <?php
         echo "<section class=\"equal\">";

@@ -25,4 +25,8 @@ $(document).ready(function () {
       }
 	})
 
+  // function showValue(newValue) {
+  // 	document.getElementById("rangeTxt").innerHTML=newValue;
+  // }
+
 });

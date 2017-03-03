@@ -53,23 +53,29 @@
             </select>
 
 			<div id="expanded">
-				<label for="minYear">Min Year</label>
-				<select name="minYear" id="minYear">
-                    <option selected="selected">--min year--</option>
-                    <?php for($i = 1999; $i < 2016; $i++){ echo "<option>$i</option>";} ?>
-                </select>
-				<label for="maxYear">Max Year</label>
-				<select name="maxYear" id="maxYear">
-                    <option selected="selected">--max year--</option>
-                    <?php for($i = 1999; $i < 2016; $i++){ echo "<option>$i</option>";} ?>
-                </select>
-				<label for="">Max Price</label>
-				<input type="range" name="maxPrice" id="slider" min="1000" value="50000" max="50000" step="1000">
-			</div>
+        <div class="equal">
+  				<label for="minYear">Min Year</label>
+  				<select name="minYear" id="minYear">
+              <option selected="selected">--min year--</option>
+              <?php for($i = 1999; $i < 2016; $i++){ echo "<option>$i</option>";} ?>
+          </select>
+        </div>
+        <div class="equal">
+  				<label for="maxYear">Max Year</label>
+  				<select name="maxYear" id="maxYear">
+            <option selected="selected">--max year--</option>
+            <?php for($i = 1999; $i < 2016; $i++){ echo "<option>$i</option>";} ?>
+          </select>
+        </div>
 
-			<br/>
-			<button type="submit">Submit</button>
-			<span id="expand" class="right">More options</span>
+  				<label for="">Max Price</label>
+  				<input type="range" name="maxPrice" id="slider" min="1000" value="50000" max="50000" step="1000" onchange="showValue(this.value)" />
+          <!-- <input type="text" id="rangeTxt" value="" /> -->
+		</div>
+
+		<br/>
+		<button type="submit">Submit</button>
+		<label id="expand" class="right">More options</label>
 
 		</form>
 

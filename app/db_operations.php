@@ -138,26 +138,31 @@ function getTopThree(){
             while ($row = mysqli_fetch_assoc($result)) {
 
             //-------Right panels of Product page ----------------------
-                echo "<ul class=\"statistics equal center\">
+                echo "<dl class=\"statistics equal center\">
 
-	                     <li>Price:</li><li> € $row[price]</li>
-	                     <li>Make:</li><li> $row[manufacturer]</li>
-	                     <li>Model:</li><li>$row[model]</li>
-	                     <li>Colour</li><li> $row[colour]:</li>
-	                     <li>Year:</li><li> $row[year]</li>
-		                  </ul>
+	                     <dt>Make:</dt><dd> $row[manufacturer]</dd>
+	                     <dt>Model:</dt><dd>$row[model]</dd>
+	                     <dt>Colour:</dt><dd> $row[colour]</dd>
+	                     <dt>Year:</dt><dd> $row[year]</dd>
+                       <dt>Type:</dt><dd> $row[type]</dd>
+		                  </dl>
 
-                      <ul class=\"statistics equal center\">
-                         <li>Type:</li><li> $row[type]</li>
-	                     <li>No of doors:</li><li> $row[doors]</li>
-	                     <li>Engine size:</li><li> $row[cc]</li>
-	                     <li>Fuel type:</li><li> $row[fuel]</li>
-	                     <li>Email:</li><li> $row[email]</li>
-	                     <li>Phone:</li><li> $row[phone]</li>
+                      <dl class=\"statistics equal center\">
+	                     <dt>Doors:</dt><dd> $row[doors]</dd>
+	                     <dt>Engine:</dt><dd> $row[cc]</dd>
+	                     <dt>Fuel:</dt><dd> $row[fuel]</dd>
+	                     <dt>Email:</dt><dd> $row[email]</dd>
+	                     <dt>Phone:</dt><dd> $row[phone]</dd>
 
-                      </ul>";
+                      </dl>";
             //------------------------------------------------------------
-            echo "<article><p>".$row['description']."</p></article>";
+            echo "
+            <article class=\"center\">
+              <p>
+                <strong>Price - €$row[price]</strong>
+                ".$row['description']."
+              </p>
+            </article>";
             }
         }
     }
