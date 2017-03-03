@@ -154,7 +154,7 @@ function getTopThree(){
 	                     <li>Fuel type:</li><li> $row[fuel]</li>
 	                     <li>Email:</li><li> $row[email]</li>
 	                     <li>Phone:</li><li> $row[phone]</li>
-	             
+
                       </ul>";
             //------------------------------------------------------------
             echo "<article><p>".$row['description']."</p></article>";
@@ -170,9 +170,9 @@ function getTopThree(){
             while ($row = mysqli_fetch_assoc($resultCars)) {
 
                 //-------Cell element for Products page ----------------------
-                echo "<li class='widget equal'>
+                echo "<li class='widget'>
                           <ul>
-                            <li class='equal'>
+                            <li class=''>
                               <img src=\"img\\".$row['id'].".jpg\"/>
                             </li>
                             <li>

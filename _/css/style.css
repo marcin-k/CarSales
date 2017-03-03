@@ -2965,7 +2965,6 @@ main {
   max-width: 1068px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 60px;
   margin-bottom: 0.83333%; }
   /* line 12, ../../../../../../../Users/hoots/.rvm/gems/ruby-2.3.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
   main:after {
@@ -2975,6 +2974,7 @@ main {
 
 /* line 122, ../components/sass/partials/_layout.scss */
 #hero {
+  padding-top: 60px;
   background-image: url(../../app/img/hero_img.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -2983,7 +2983,7 @@ main {
   position: relative;
   height: 100vh;
   max-width: 100vw; }
-  /* line 130, ../components/sass/partials/_layout.scss */
+  /* line 131, ../components/sass/partials/_layout.scss */
   #hero .callout {
     max-width: 1068px;
     margin-left: auto;
@@ -3002,75 +3002,95 @@ main {
       display: block;
       clear: both; }
 
-/* line 143, ../components/sass/partials/_layout.scss */
+/* line 144, ../components/sass/partials/_layout.scss */
 section {
   padding-top: 40px; }
-  /* line 146, ../components/sass/partials/_layout.scss */
+  /* line 147, ../components/sass/partials/_layout.scss */
   section form {
     margin: 3.33333%;
     padding: 3.33333%; }
-    /* line 149, ../components/sass/partials/_layout.scss */
+    /* line 150, ../components/sass/partials/_layout.scss */
     section form.feature {
       margin: 0;
       padding-right: 0; }
-      /* line 152, ../components/sass/partials/_layout.scss */
+      /* line 153, ../components/sass/partials/_layout.scss */
       section form.feature input:first-child {
         margin-top: 0;
         margin-right: 0; }
-  /* line 159, ../components/sass/partials/_layout.scss */
+  /* line 160, ../components/sass/partials/_layout.scss */
   section form.refine {
     margin: 0;
     padding: 0; }
 
-/* line 165, ../components/sass/partials/_layout.scss */
+/* line 166, ../components/sass/partials/_layout.scss */
 article {
   padding-top: 40px; }
-  /* line 167, ../components/sass/partials/_layout.scss */
+  /* line 168, ../components/sass/partials/_layout.scss */
   article header {
     margin: 0 auto;
     width: 81.66667%; }
-    /* line 170, ../components/sass/partials/_layout.scss */
+    /* line 171, ../components/sass/partials/_layout.scss */
     article header ul {
       margin-top: 2em; }
 
-/* line 181, ../components/sass/partials/_layout.scss */
-.gallery ul {
-  padding: 0 !important;
-  margin: 0 !important; }
-/* line 185, ../components/sass/partials/_layout.scss */
-.gallery li {
-  margin: 0.83333%;
-  list-style: none; }
-/* line 208, ../components/sass/partials/_layout.scss */
-.gallery p {
-  margin-left: 2em; }
+/* line 177, ../components/sass/partials/_layout.scss */
+.gallery {
+  padding: 0; }
+  /* line 182, ../components/sass/partials/_layout.scss */
+  .gallery ul {
+    padding: 0 !important;
+    margin: 0 !important; }
+    /* line 185, ../components/sass/partials/_layout.scss */
+    .gallery ul:after {
+      content: " ";
+      clear: both;
+      display: block; }
+  /* line 191, ../components/sass/partials/_layout.scss */
+  .gallery li {
+    width: 48.33333%;
+    float: left;
+    margin: 0.83333%;
+    list-style: none; }
+    /* line 66, ../../../../../../../Users/hoots/.rvm/gems/ruby-2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+    .gallery li:nth-child(2n + 1) {
+      margin-left: 0.83333%;
+      margin-right: -100%;
+      clear: both; }
+    /* line 66, ../../../../../../../Users/hoots/.rvm/gems/ruby-2.3.0/gems/susy-2.2.12/sass/susy/language/susy/_gallery.scss */
+    .gallery li:nth-child(2n + 2) {
+      margin-left: 50.83333%;
+      margin-right: -100%;
+      clear: none; }
+  /* line 215, ../components/sass/partials/_layout.scss */
+  .gallery p {
+    margin-left: 2em; }
 
-/* line 213, ../components/sass/partials/_layout.scss */
+/* line 220, ../components/sass/partials/_layout.scss */
 .statistics li {
   margin: 1em 0; }
 
-/* line 217, ../components/sass/partials/_layout.scss */
+/* line 224, ../components/sass/partials/_layout.scss */
 .large {
   width: 65%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-/* line 221, ../components/sass/partials/_layout.scss */
+/* line 228, ../components/sass/partials/_layout.scss */
 .equal {
   width: 48.33333%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-/* line 225, ../components/sass/partials/_layout.scss */
+/* line 232, ../components/sass/partials/_layout.scss */
 .small {
   width: 31.66667%;
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%; }
 
-/* line 229, ../components/sass/partials/_layout.scss */
+/* line 236, ../components/sass/partials/_layout.scss */
 .full {
   width: 98.33333%;
   float: left;
@@ -3078,23 +3098,27 @@ article {
   margin-right: 0.83333%;
   clear: both; }
 
-/* line 234, ../components/sass/partials/_layout.scss */
+/* line 241, ../components/sass/partials/_layout.scss */
 .left {
   text-align: left; }
 
-/* line 238, ../components/sass/partials/_layout.scss */
+/* line 245, ../components/sass/partials/_layout.scss */
 .right {
   text-align: right; }
 
-/* line 242, ../components/sass/partials/_layout.scss */
+/* line 249, ../components/sass/partials/_layout.scss */
 .center {
   text-align: center; }
 
-/* line 246, ../components/sass/partials/_layout.scss */
+/* line 253, ../components/sass/partials/_layout.scss */
+.clear {
+  clear: both; }
+
+/* line 257, ../components/sass/partials/_layout.scss */
 img {
   max-width: 100%; }
 
-/* line 252, ../components/sass/partials/_layout.scss */
+/* line 263, ../components/sass/partials/_layout.scss */
 body > footer {
   max-width: 1068px;
   margin-left: auto;
@@ -3106,10 +3130,10 @@ body > footer {
     content: " ";
     display: block;
     clear: both; }
-  /* line 256, ../components/sass/partials/_layout.scss */
+  /* line 267, ../components/sass/partials/_layout.scss */
   body > footer ul {
     padding: 0; }
-  /* line 260, ../components/sass/partials/_layout.scss */
+  /* line 271, ../components/sass/partials/_layout.scss */
   body > footer hr {
     width: 98.33333%;
     float: left;
@@ -3117,16 +3141,16 @@ body > footer {
     margin-right: 0.83333%;
     border: none;
     border-top: 1px solid #777; }
-  /* line 266, ../components/sass/partials/_layout.scss */
+  /* line 277, ../components/sass/partials/_layout.scss */
   body > footer nav {
     width: 48.33333%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%; }
-    /* line 268, ../components/sass/partials/_layout.scss */
+    /* line 279, ../components/sass/partials/_layout.scss */
     body > footer nav ul li {
       display: inline; }
-  /* line 275, ../components/sass/partials/_layout.scss */
+  /* line 286, ../components/sass/partials/_layout.scss */
   body > footer .madeby {
     width: 48.33333%;
     float: left;
@@ -3134,42 +3158,42 @@ body > footer {
     margin-right: 0.83333%;
     text-align: right; }
 
-/* line 283, ../components/sass/partials/_layout.scss */
+/* line 294, ../components/sass/partials/_layout.scss */
 #expanded {
   display: none; }
 
 @media (max-width: 1068px) {
-  /* line 290, ../components/sass/partials/_layout.scss */
+  /* line 301, ../components/sass/partials/_layout.scss */
   body > header, main, footer {
     padding-left: 3.33333%;
     padding-right: 3.33333%; } }
-@media (max-width: 800px) {
-  /* line 297, ../components/sass/partials/_layout.scss */
+@media (max-width: 680px) {
+  /* line 308, ../components/sass/partials/_layout.scss */
   .large, .equal, .small {
     width: 98.33333%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%; }
 
-  /* line 300, ../components/sass/partials/_layout.scss */
+  /* line 311, ../components/sass/partials/_layout.scss */
   body > header {
     padding-top: 15px;
     padding-bottom: 15px; }
-    /* line 303, ../components/sass/partials/_layout.scss */
+    /* line 314, ../components/sass/partials/_layout.scss */
     body > header .logo, body > header .menu {
       height: 48px; }
-      /* line 305, ../components/sass/partials/_layout.scss */
+      /* line 316, ../components/sass/partials/_layout.scss */
       body > header .logo img, body > header .logo svg, body > header .menu img, body > header .menu svg {
         height: 48px; }
 
-  /* line 311, ../components/sass/partials/_layout.scss */
+  /* line 322, ../components/sass/partials/_layout.scss */
   main {
     padding-top: 90px; }
 
-  /* line 315, ../components/sass/partials/_layout.scss */
+  /* line 326, ../components/sass/partials/_layout.scss */
   body > footer {
     margin-top: 30px; }
-    /* line 317, ../components/sass/partials/_layout.scss */
+    /* line 328, ../components/sass/partials/_layout.scss */
     body > footer span {
       display: none; } }
 /* line 11, ../components/sass/style.scss */
@@ -3271,7 +3295,7 @@ nav,
 
 /* line 98, ../components/sass/style.scss */
 h1 {
-  font-size: 4em; }
+  font-size: 3.7em; }
 
 /* line 102, ../components/sass/style.scss */
 #hero h1 {
@@ -3279,7 +3303,7 @@ h1 {
 
 /* line 106, ../components/sass/style.scss */
 h2 {
-  font-size: 3em; }
+  font-size: 2.6em; }
 
 /* line 108, ../components/sass/style.scss */
 h3,
@@ -3393,29 +3417,31 @@ form ul, form .cars ul {
 
 /* line 205, ../components/sass/style.scss */
 .widget {
-  background: rgba(0, 0, 0, 0.9);
-  color: #fefefe; }
+  border-radius: .2em;
+  background: rgba(48, 48, 48, 0.95);
+  color: #fefefe;
+  border-radius: 0px 1px 8px 2px rgba(0, 0, 0, 0.3); }
 
-/* line 210, ../components/sass/style.scss */
+/* line 212, ../components/sass/style.scss */
 table {
   width: 100%; }
-  /* line 214, ../components/sass/style.scss */
+  /* line 216, ../components/sass/style.scss */
   table tbody tr {
     border-bottom: solid 1px _palette(border); }
-  /* line 219, ../components/sass/style.scss */
+  /* line 221, ../components/sass/style.scss */
   table td,
   table th {
     padding: .5em 1em; }
-  /* line 224, ../components/sass/style.scss */
+  /* line 226, ../components/sass/style.scss */
   table th {
     font-weight: 400;
     text-align: left; }
-  /* line 229, ../components/sass/style.scss */
+  /* line 231, ../components/sass/style.scss */
   table thead {
     background: #fffcff;
     color: #777; }
 
-/* line 242, ../components/sass/style.scss */
+/* line 244, ../components/sass/style.scss */
 audio,
 canvas,
 progress,
@@ -3423,7 +3449,7 @@ video {
   height: auto;
   width: 100%; }
 
-/* line 250, ../components/sass/style.scss */
+/* line 252, ../components/sass/style.scss */
 #expand {
   color: #739483;
   cursor: pointer; }

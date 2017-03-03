@@ -11,7 +11,13 @@ $(document).ready(function () {
 	$('#expand').click(function(){
 			$('#expanded').slideToggle();
       var expandTxt = $(this).text();
-      if(expandTxt == 'More options') {
+      if(expandTxt == 'Refine search') {
+        $('#expand').text('Hide search')
+      }
+      else if(expandTxt == 'Hide search') {
+        $('#expand').text('Refine search')
+      }
+      else if(expandTxt == 'More options') {
         $('#expand').text('Less options')
       }
       else {

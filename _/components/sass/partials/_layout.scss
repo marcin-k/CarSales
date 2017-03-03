@@ -115,11 +115,12 @@ body > header {
 
 main {
   @include container;
-  padding-top: $header-height / 2;
+  // padding-top: $header-height / 6;
   margin-bottom: gutter();
 }
 
 #hero {
+  padding-top: $header-height / 2;
   background-image: url(../../app/img/hero_img.jpg);
   @include background-cover;
   position:relative;
@@ -174,16 +175,22 @@ article {
 }
 
 .gallery {
-  // padding:0;
+  padding:0;
   // margin-top: gutter();
   // margin-bottom: gutter();
   // background-position: center center;
   ul {
     padding: 0 !important;
     margin: 0 !important;
+    &:after {
+      content: " ";
+      clear: both;
+      display: block;
+    }
   }
   li {
   //   @include span(4);
+  @include gallery(6 of 12);
     margin: gutter();
     list-style: none;
   //   margin-top: gutter();
@@ -243,6 +250,10 @@ article {
   text-align: center;
 }
 
+.clear {
+  clear: both;
+}
+
 img {
   max-width:100%;
 }
@@ -293,7 +304,7 @@ body > footer {
   }
 }
 
-@include breakpoint($small) {
+@include breakpoint($narrow) {
   .large, .equal, .small {
     @include span(12);
   }
