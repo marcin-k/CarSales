@@ -34,15 +34,7 @@
               </script>
               <select name="make" id="model" class="carMake">
                   <option selected="selected">--Select Make--</option>
-                  <?php
-                      include('db.php');
-                      $sql=mysql_query("SELECT distinct manufacturer FROM UsedCars");
-                      while($row=mysql_fetch_array($sql))
-                      {
-                          $id=$row['manufacturer'];
-                          echo '<option value="'.$id.'">'.$id.'</option>';
-                      }
-                  ?>
+                  <?php getMakeDropDownSelection(); ?>
               </select>
               <select name="model" id="model" class="carModel">
                   <option selected="selected">--Select Model--</option>

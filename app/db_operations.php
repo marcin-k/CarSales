@@ -86,7 +86,24 @@ function update($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
                     `fuel`='$fuel', `email`='$email', `phone`='$phone' WHERE `id`='$id'";
     executeQuery($updateQuery, "CarSales");
 }
-
+//****************************** Make selection dropdown  **************************
+function getMakeDropDownSelection(){
+    $sql="SELECT distinct manufacturer FROM UsedCars";
+    $result = executeQuery($sql, "CarSales");
+    while($row = mysqli_fetch_assoc($result)) {
+        $id=$row['manufacturer'];
+        echo '<option value="'.$id.'">'.$id.'</option>';
+    }
+}
+//****************************** Model selection dropdown  **************************
+function getModelDropDownSelection($id){
+    $sql="SELECT distinct model FROM CarSales.UsedCars where manufacturer='$id'";
+    $result = executeQuery($sql, "CarSales");
+    while($row = mysqli_fetch_assoc($result)) {
+        $id=$row['model'];
+        echo '<option value="'.$id.'">'.$id.'</option>';
+    }
+}
 //****************************** Get 3 most popular types  **************************
 function getTopThree(){
     //Query counts all the car types and list them in descending order
