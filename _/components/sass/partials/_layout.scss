@@ -17,15 +17,17 @@ $susy: (
 
 .wrap {
   @include container;
+  
+  position: relative;
 }
 
 // Header --------------------------------------------
 
 body > header {
   left: 0;
-  padding-bottom: $header-height / 4;
-  padding-top: $header-height / 4;
-  position: fixed;
+  padding-bottom: $header-height / 6;
+  padding-top: $header-height / 6;
+  // position: fixed;
   right: 0;
   top: 0;
   z-index: 100;
@@ -33,11 +35,11 @@ body > header {
   .logo,
   .menu {
     @include span(6);
-    height: $header-height / 2;
+    height: $header-height / 3;
     position: relative;
 
     img {
-      height: $header-height / 2.5;
+      height: $header-height / 3;
     }
   }
 
@@ -76,7 +78,8 @@ body > header {
     ul {
       -webkit-backface-visibility: hidden;
       opacity: 0;
-      padding: $header-height / 4 0 0;
+      padding: 0;
+      // padding: $header-height / 4 0 0;
       -webkit-perspective: 1000;
       transform: translateX(-20px);
       -webkit-transform-style: preserve-3d;
@@ -114,14 +117,18 @@ body > header {
 
 main {
   @include container;
-  padding-top: $header-height;
+  padding-top: $header-height / 6;
   margin-bottom: gutter();
 }
 
 #hero {
+  padding-top: $header-height / 2;
+  background-image: url(../../app/img/hero_img.jpg);
   @include background-cover;
   position:relative;
   height:100vh;
+  max-width:100vw;
+
 
   .callout{
     //margin-top:$header-height/1.75;
@@ -142,18 +149,19 @@ section {
   form {
     margin: gutter() * 4;
     padding: gutter() * 4;
+    &.feature {
+        margin: 0;
+        padding-right: 0;
+        input:first-child {
+          margin-top: 0;
+          margin-right: 0;
+        }
+    }
   }
 
   form.refine {
     margin: 0;
     padding: 0;
-  }
-
-  &.feature {
-    form {
-      margin: 0;
-      padding: 0;
-    }
   }
 }
 
@@ -169,16 +177,22 @@ article {
 }
 
 .gallery {
-  // padding:0;
+  padding:0;
   // margin-top: gutter();
   // margin-bottom: gutter();
   // background-position: center center;
   ul {
     padding: 0 !important;
     margin: 0 !important;
+    &:after {
+      content: " ";
+      clear: both;
+      display: block;
+    }
   }
   li {
   //   @include span(4);
+  @include gallery(6 of 12);
     margin: gutter();
     list-style: none;
   //   margin-top: gutter();
@@ -238,6 +252,10 @@ article {
   text-align: center;
 }
 
+.clear {
+  clear: both;
+}
+
 img {
   max-width:100%;
 }
@@ -288,7 +306,7 @@ body > footer {
   }
 }
 
-@include breakpoint($small) {
+@include breakpoint($narrow) {
   .large, .equal, .small {
     @include span(12);
   }

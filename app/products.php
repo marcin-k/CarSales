@@ -64,14 +64,13 @@
   </section>
 
 	<section class="gallery">
-    <ul>
       <?php
       // For debugging purposes only
       //echo "make: ".$_POST['make']."</br> model: ".$_POST['model']."</br> minYear: ".$_POST['minYear']."</br> submit: ".$_POST['submit'];
 
           //if url is access from outside index.php
           if((!isset($_POST['make'])&&!isset($_POST['type']))){
-              echo "<h1>All cars in DB</h1>";
+              echo "<h2>All cars in DB</h2><ul>";
               getAllCarsInDB();
           }
 
@@ -83,59 +82,59 @@
 
           //if user selects the type of car (right side menu on index page)
           elseif(isset($_POST['type'])==true){
-              echo "<h1> ".$_POST['type']."</h1>";
+              echo "<h2> ".$_POST['type']."</h2><ul>";
               getSpecificType($_POST['type']);
           }
 
           //If users selects only make and model(model is automatically selected once make is picked)
           elseif(($_POST['make']!=="--Select Make--")&&($_POST['minYear']=="--min year--")&&($_POST['maxYear']=="--max year--")){
-              echo "<h1>TEST q for make and model + max price </h1>";
+              echo "<h2>TEST q for make and model + max price </h2><ul>";
               getMakeModelMaxPrice($_POST['make'],$_POST['model'],$_POST['maxPrice']);
           }
 
           //If user selects only min year
           elseif(($_POST['make']=="--Select Make--")&&($_POST['minYear']!=="--min year--")&&($_POST['maxYear']=="--max year--")){
-              echo "<h1>TEST q for min year + max price </h1>";
+              echo "<h2>TEST q for min year + max price </h2><ul>";
               getMinYearMaxPrice($_POST['minYear'],$_POST['maxPrice']);
           }
 
           //If users selects only max year
           elseif(($_POST['make']=="--Select Make--")&&($_POST['minYear']=="--min year--")&&($_POST['maxYear']!=="--max year--")){
-              echo "<h1>TEST q for max year + max price </h1>";
+              echo "<h2>TEST q for max year + max price </h2><ul>";
               getMaxYearMaxPrice($_POST['maxYear'],$_POST['maxPrice']);
           }
 
           //If user selects make and model and min year (but not max year)
           elseif(($_POST['make']!=="--Select Make--")&&($_POST['minYear']!=="--min year--")&&($_POST['maxYear']=="--max year--")){
-              echo "<h1>TEST q for make, model, min year + max price </h1>";
+              echo "<h2>TEST q for make, model, min year + max price </h2><ul>";
               getMakeModelMinYearMaxPrice($_POST['make'],$_POST['model'],$_POST['minYear'],$_POST['maxPrice']);
           }
 
           //If user selects make and model and max year (but not min year)
           elseif(($_POST['make']!=="--Select Make--")&&($_POST['minYear']=="--min year--")&&($_POST['maxYear']!=="--max year--")){
-              echo "<h1>TEST q for make, model, max year + max price </h1>";
+              echo "<h2>TEST q for make, model, max year + max price </h2><ul>";
               getMakeModelMaxPrice($_POST['make'],$_POST['model'],$_POST['maxPrice']);
           }
 
           //If user selects min year, max year (but not make and model)
           elseif(($_POST['make']=="--Select Make--")&&($_POST['minYear']!=="--min year--")&&($_POST['maxYear']!=="--max year--")){
-              echo "<h1>TEST q for min year,  max year + max price </h1>";
+              echo "<h2>TEST q for min year,  max year + max price </h2><ul>";
               getMinYearMaxYearMaxPrice($_POST['minYear'],$_POST['maxYear'],$_POST['maxPrice']);
           }
 
           //If user selects all fields
           elseif(($_POST['make']!=="--Select Make--")&&($_POST['minYear']!=="--min year--")&&($_POST['maxYear']!=="--max year--")){
-              echo "<h1>TEST q make and model, min year, max year + max price </h1>";
+              echo "<h2>TEST q make and model, min year, max year + max price </h2><ul>";
               getMakeModelMinYearMaxYearMaxPrice($_POST['make'],$_POST['model'],$_POST['minYear'],$_POST['maxPrice'],$_POST['maxPrice']);
           }
 
           //if user just use the url or clicks the submit button without filling any fields
           else{
-              echo "<h1>All cars in DB</h1>";
+              echo "<h2>All cars in DB</h2><ul>";
               getAllCarsInDB();
           }
       ?>
-    <ul>
+    </ul>
 	</section>
 </main>
 <!--MAIN END-->

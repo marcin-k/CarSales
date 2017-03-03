@@ -46,13 +46,13 @@ body {
 
     .menu {
       cursor: pointer;
-      font-size: 2em;
+      font-size: 1.4em;
       text-transform: uppercase;
     }
 
     nav {
-      background-color: $header-background;
-      font-size: 1.75em;
+      // background-color: $header-background;
+      font-size: 1.2em;
     }
   }
 
@@ -96,11 +96,14 @@ nav,
 }
 
 h1 {
-  font-size: 4em;
-  margin-top: 0;
+  font-size: 3.7em;
 }
 
-h2 {font-size: 3em;}
+#hero h1 {
+ margin: 0;
+}
+
+h2 {font-size: 2.6em;}
 
 h3,
 input[type="submit"] {font-size: 2em;}
@@ -131,6 +134,10 @@ a {
   }
 }
 
+.light {
+  color: $font-color-light;
+}
+
 strong,
 b {
   font-weight: 600;
@@ -155,7 +162,7 @@ textarea,
 label,
 button {
   border: 0;
-  color: $font-color-primary;
+  // color: $font-color-primary;
   display: block;
   margin: gutter() * 4;
   outline: 0;
@@ -176,17 +183,31 @@ button {
   label,
   button {
     border: 0;
-    color: $font-color-primary;
+    // color: $font-color-primary;
     display: inline-block;
     margin: gutter();
     padding: .5em;
     width: 25% - gutter() * 4;
   }
 }
+label{
+  padding-left: 0em;
+}
 
 ul,
 ol {
   padding: 0 0 2em;
+}
+
+dl {
+    text-transform: capitalize;
+  dt {
+      font-weight: bold;
+  }
+
+  dd {
+    margin: 0 0 .5em;
+  }
 }
 
 form {
@@ -196,8 +217,10 @@ form {
 }
 
 .widget {
-  background: $theme-dark;
+  border-radius: .2em;
+  background: $widget-background;
   color: $font-color-light;
+  border-radius: 0px 1px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
 table {

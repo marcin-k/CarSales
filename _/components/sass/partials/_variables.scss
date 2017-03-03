@@ -5,6 +5,7 @@ $theme-primary: #ff6;
 $theme-dark: #222;
 
 $header-background: rgba(255, 252, 255, .98);
+$widget-background: rgba(48, 48, 48, .95);
 
 $font-color-primary: #777;
 $font-color-secondary: #f5eee8;
@@ -22,7 +23,7 @@ $footer-height: $header-height;
 
 // Breakpoints -------------------------------------------------
 
-$narrow: max-width 480px;
+$narrow: max-width 680px;
 $small: max-width 800px;
 $medium: max-width 960px;
 $wide: max-width 1200px;
