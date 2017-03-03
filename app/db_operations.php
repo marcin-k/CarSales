@@ -98,7 +98,7 @@ function getTopThree(){
             while ($row = mysqli_fetch_assoc($result)) {
                 if($numberOfButtons>0){
             //----------------------------------------------------------------------------------------------------
-                    echo "<form name=\"type\" action=\"products.php\" method=\"POST\">";
+                    echo "<form name=\"type\" class =\"feature equal center\" action=\"products.php\" method=\"POST\">";
                     echo "<input type=\"submit\" class=\"widget\" name=\"type\" value=\"".$row['type']."\" />";
                     $numberOfButtons--;
                 }
@@ -145,6 +145,8 @@ function getTopThree(){
 	                     <li>Colour:</li>
 	                     <li>Year:</li>
 	                     <li>Type:</li>
+                       </ul>
+                      <ul>
 	                     <li>No of doors:</li>
 	                     <li>Engine size:</li>
 	                     <li>Fuel type:</li>

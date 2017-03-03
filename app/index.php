@@ -7,10 +7,13 @@
 <!--GET HEADER-->
 
 <!--MAIN START-->
-<main>
-	<h1 class="center">Find your preloved car</h1>
-	<section class="equal left">
-		<form action="products.php" class="search widget" method="post">
+
+<main id="hero">
+  <div class="wrap">
+
+	<h1 class="center light">Find your preloved car</h1>
+	<section class="full">
+		<form action="products.php" class="equal left search widget" method="post">
             <script type="text/javascript" src="jQueryJavaScriptLibrary.js"></script>
             <script type="text/javascript">
                 $(document).ready(function(){
@@ -69,11 +72,10 @@
 			<span id="expand" class="right">More options</span>
 
 		</form>
-	</section>
 
-	<section class="feature equal center">
-      <?php getTopThree(); ?>
+    <?php getTopThree(); ?>
 	</section>
+</div>
 </main>
 <!--MAIN END-->
 

@@ -46,13 +46,13 @@ body {
 
     .menu {
       cursor: pointer;
-      font-size: 2em;
+      font-size: 1.4em;
       text-transform: uppercase;
     }
 
     nav {
-      background-color: $header-background;
-      font-size: 1.75em;
+      // background-color: $header-background;
+      font-size: 1.2em;
     }
   }
 
@@ -97,7 +97,10 @@ nav,
 
 h1 {
   font-size: 4em;
-  margin-top: 0;
+}
+
+#hero h1 {
+ margin: 0;
 }
 
 h2 {font-size: 3em;}
@@ -129,6 +132,10 @@ a {
     border-bottom: dotted 1px;
     color: lighten($font-color-accent, 10%);
   }
+}
+
+.light {
+  color: $font-color-light;
 }
 
 strong,
@@ -196,7 +203,7 @@ form {
 }
 
 .widget {
-  background: $theme-dark;
+  background: $widget-background;
   color: $font-color-light;
 }
 

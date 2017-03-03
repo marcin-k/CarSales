@@ -11,12 +11,12 @@
 <body>
 
 	<header>
-		
+
 		<div class="wrap">
 			<div class="logo">
-				<a href="#">LOGO</a>
+				<a href="#"><img src="img/logo.svg" alt="logo" /></a>
 			</div>
-		
+
 			<div class="menu">
 					<a>Menu</a>
 			</div>
