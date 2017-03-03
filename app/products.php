@@ -66,11 +66,19 @@
 	<section class="gallery">
     <ul>
       <?php
+      // For debugging purposes only
+      //echo "make: ".$_POST['make']."</br> model: ".$_POST['model']."</br> minYear: ".$_POST['minYear']."</br> submit: ".$_POST['submit'];
 
           //if url is access from outside index.php
           if((!isset($_POST['make'])&&!isset($_POST['type']))){
               echo "<h1>All cars in DB</h1>";
               getAllCarsInDB();
+          }
+
+          //user click on manufacturer name on product page
+          elseif(isset($_POST['submit'])==true){
+              echo "<h1> just make no model</h1>";
+              getMake($_POST['make']);
           }
 
           //if user selects the type of car (right side menu on index page)

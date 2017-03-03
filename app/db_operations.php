@@ -121,7 +121,7 @@ function getTopThree(){
 
 }
 
-//****************************** Get all cars with specific type  **************************
+//****************************** Get all cars with specific type  *********************
     function getSpecificType($type){
         $getCars = "SELECT * FROM CarSales.UsedCars WHERE type='$type'";
         displayListOfCars($getCars);
@@ -192,6 +192,23 @@ function getTopThree(){
             echo "0 results";
         }
     }
+//********* Returns make or model(based on value passed in) for a given ID ***********
+function getModelOrMakeBasedOnID($id, $makeOrModel){
+    $getMakeOrModel = "SELECT ".$makeOrModel." FROM CarSales.UsedCars where id='$id'";
+    $result = executeQuery($getMakeOrModel, "CarSales");
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $toReturn = $row[$makeOrModel];
+        }
+    }
+    return $toReturn;
+}
+
+//*************** Load cars with specified: make only 8*******************************
+function getMake($make){
+    $getCars = "SELECT * FROM CarSales.UsedCars where manufacturer='$make'";
+    displayListOfCars($getCars);
+}
 
 //*************** Load cars with specified: make, model, max price ********************
 function getMakeModelMaxPrice($make, $model, $maxPrice){

@@ -32,7 +32,7 @@
                 });
             </script>
             <label for="carMake">Choose car make</label>
-            <select name="make" id="model" class="carMake">
+            <select name="make" id="make" class="carMake">
                 <option selected="selected">--Select Make--</option>
                 <?php
                     include('db.php');

@@ -1,9 +1,9 @@
 <?php
 	// $title = FETCH (Car Model && Car Make) from DB
 	// $description =  FETCH (Car Description) from DB
-  $title = 'product';
+    $title = 'product';
 	$description =  'Lorem ipsum dolor sit amet';
-  include 'inc/header.php';
+    include 'inc/header.php';
 	include "db_operations.php";
 ?>
 <!--GET HEADER-->
@@ -13,8 +13,50 @@
 
         <?php
         echo "<section class=\"equal\">";
-            //TODO: add and path allowing to search the root (make or model same as selected one)
-            echo "test";
+
+        //-----------------------------------------------------------------------------------------
+        //TODO: move css outside this file, change the styling so the buttons align next to one another
+        echo "
+        <form action=\"products.php\" method=\"post\">
+           
+           <input name=\"make\" value='".getModelOrMakeBasedOnID($_GET['id'], 'manufacturer')."' hidden>
+           <input name=\"model\" value='".getModelOrMakeBasedOnID($_GET['id'], 'model')."' hidden>
+           <input name=\"minYear\" value=\"--min year--\" hidden> 
+           <input name=\"maxYear\" id=\"make\" class=\"carMake\" value=\"--max year--\" hidden>
+           <input name=\"maxPrice\" value=\"50000\" hidden> 
+    
+            <button style='
+              border:none;
+              outline:none;
+              background:none;
+              cursor:pointer;
+              color:#0000EE;
+              padding:0;
+              text-decoration:underline;
+              font-family:inherit;
+              font-size:inherit;' 
+              
+            name =\"submit\" type=\"submit\" class='equal' value='make'>".getModelOrMakeBasedOnID($_GET['id'], 'manufacturer')."  \</button>
+            
+           
+            
+            <button style='
+              border:none;
+              outline:none;
+              background:none;
+              cursor:pointer;
+              color:#0000EE;
+              padding:0;
+              text-decoration:underline;
+              font-family:inherit;
+              font-size:inherit;' 
+              
+            type=\"submit\" class='equal' value='model'>".getModelOrMakeBasedOnID($_GET['id'], 'model')."</button>
+           
+        </form>
+        ";
+        //-----------------------------------------------------------------------------------------
+
 
             $id  = $_GET['id'];
             //checks if there is a image for a specific car
