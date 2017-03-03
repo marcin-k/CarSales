@@ -76,7 +76,6 @@
 
           //user click on manufacturer name on product page
           elseif(isset($_POST['submit'])==true){
-              echo "<h1> just make no model</h1>";
               getMake($_POST['make']);
           }
 
