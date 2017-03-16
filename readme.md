@@ -1,8 +1,11 @@
 # Hyperdmedia Project
 
 ## Contributors
+
 Mark Saunders
+
 Marcin Krzeminski
+
 Anuraj Pushpangadan
 
 
