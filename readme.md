@@ -7,6 +7,9 @@ Anuraj Pushpangadan
 
 
 ## Task List
+Unless otherwise stated, each of the following is worth 10%
+
+-   ~~You are to run the script setup.php which will create the database and table.~~
 -   ~~Produce the form. (5%)~~
 -   Check mandatory fields (fields in blue) are completed.     (10%)
 -   In addition the user must enter at least one of the fields email or phone. (10%)
