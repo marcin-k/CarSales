@@ -14,7 +14,7 @@
 
 		<div class="wrap">
 			<div class="logo">
-				<a href="#"><img src="img/logo.svg" alt="logo" /></a>
+				<a href="index.php"><img src="img/logo.svg" alt="logo" /></a>
 			</div>
 
 			<div class="menu">
