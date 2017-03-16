@@ -9,6 +9,13 @@ Marcin Krzeminski
 Anuraj Pushpangadan
 
 
+## Requirements
+
+*PHP must not be higher than version 5.x*
+
+
+
+
 ## Task List
 Unless otherwise stated, each of the following is worth 10%
 
