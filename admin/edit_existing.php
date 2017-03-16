@@ -9,7 +9,12 @@
   <section>
     <h3>Existing cars</h3>
     <ol>
-      <li>Car1</li>
+      <li>Car1
+        <a href="">
+          <!-- Opel Corsa 2015 -> add_edit_item.php
+          Ford Focus 2011  -->
+        </a>
+      </li>
       <li>Car2</li>
       <li>Car3</li>
     </ol>
