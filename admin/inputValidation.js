@@ -35,10 +35,6 @@ var valid  = new Boolean(true);
             validateNumberRange(1, 7, "doors")
         }
 
-        //validate email
-        if(validateField("email")){
-
-        }
 
         //validate radio buttons for fuel and type of car
         if(document.getElementById('fuel').checked){
@@ -72,6 +68,7 @@ var valid  = new Boolean(true);
             if((validateField("email"))&&(!validateField("phone"))) {
                 validateEmailAddress(document.getElementById("email").value);
                 document.getElementById("phone").style.backgroundColor = "#99ff99";
+                document.getElementById("phoneError").innerHTML = "";
             }
             //if only phone number was entered
             else if((!validateField("email"))&&(validateField("phone"))) {
@@ -86,7 +83,6 @@ var valid  = new Boolean(true);
                 document.getElementById("phoneError").innerHTML = "";
             }
         }
-
 
         return valid;
     }
