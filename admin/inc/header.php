@@ -18,7 +18,8 @@
 			</div>
 		
 			<div class="right">
-					<a href="#">Log off</a>
+                <!-- Brings user to login page-->
+					<a href="index.php">Log off</a>
 			</div>
 		</div>
 	</header>

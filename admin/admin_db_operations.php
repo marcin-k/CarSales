@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by IntelliJ IDEA.
+ * Created by phpStorm
  * User: marcin
  * Date: 03/03/2017
  * Time: 22:28
@@ -46,17 +46,23 @@ function validateLogin($username, $password){
 }
 //******************************** Adds new car to DB ********************************
 function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone, $price, $desc){
-
+    //Converts id to uppercase
+    $id = strtoupper($id);
     $checkId = "SELECT * FROM `CarSales`.`UsedCars` WHERE `id`='$id'";
     $result = executeQuery($checkId, "CarSales");
     //checks if the record with the provided id already exist in db
-    if(mysqli_num_rows($result) < 1){
+    if(mysqli_num_rows($result) == 0){
         //adds a record to db
         $addCar = "INSERT INTO `CarSales`.`UsedCars` (`id`, `manufacturer`, `model`, `colour`,
                     `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`, `price`, `description`) VALUES
                     ('$id', '$manufacturer', '$model', '$colour', '$year', '$type',
                      '$doors', '$cc', '$fuel', '$email', '$phone', '$price', '$desc')";
         executeQuery($addCar, "CarSales");
+        echo "<li>
+                Added Successfully -  '$id', '$manufacturer', '$model'
+              
+              </li>
+        ";
     }
     else{
         echo "Car with ID: ".$id." already exist in DB</br>";
@@ -78,3 +84,11 @@ function update($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
                     `fuel`='$fuel', `email`='$email', `phone`='$phone' WHERE `id`='$id'";
     executeQuery($updateQuery, "CarSales");
 }
+
+//******************************** Retrieves all cars from DB  ********************************
+
+function getAllCarsInDB(){
+    $getAllCars = "SELECT * FROM CarSales.UsedCars";
+    displayListOfCars($getAllCars);
+}
+

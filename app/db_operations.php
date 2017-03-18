@@ -55,16 +55,14 @@ function getTopThree(){
     if($result!=null){
         if (mysqli_num_rows($result) > 2) {
             $numberOfButtons = 3;
+            echo "<form name=\"type\" class =\"feature equal center\" action=\"products.php\" method=\"POST\">";
             while ($row = mysqli_fetch_assoc($result)) {
                 if($numberOfButtons>0){
-            //----------------------------------------------------------------------------------------------------
-                    echo "<form name=\"type\" class =\"feature equal center\" action=\"products.php\" method=\"POST\">";
                     echo "<input type=\"submit\" class=\"widget\" name=\"type\" value=\"".$row['type']."\" />";
                     $numberOfButtons--;
                 }
                 if($numberOfButtons==0){
                     echo "</form>";
-            //----------------------------------------------------------------------------------------------------
                 }
             }
         }
