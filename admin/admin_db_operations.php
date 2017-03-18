@@ -92,3 +92,9 @@ function getAllCarsInDB(){
     displayListOfCars($getAllCars);
 }
 
+//******************************** Update a password  ********************************
+
+function updatePassword($username, $newPass){
+    $updateQuery = "UPDATE `CarSales`.`Admins` SET `password`='$newPass' WHERE `login`='$username'";
+    executeQuery($updateQuery, "CarSales");
+}

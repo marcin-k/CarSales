@@ -29,6 +29,9 @@ else {
           <section >
             <h3 > Add new car / update car </h3 >
             <form name='addForm' onSubmit='return validateInput()' method='post' action = \"www.google.com\" >
+                <input name='username' value=".$_POST['username']." hidden>
+                <input name='pass' value=".$_POST['pass']." hidden>
+            
                 <dl class=\"\">
                 <dt>ID:</dt><dd> <input type='text' id='id' value=$id><p id=\"idError\"></p></dd>
                 <dt>Manufacturer:</dt><dd> <input type='text' id='make'><p id=\"makeError\"></p></dd>
