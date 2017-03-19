@@ -37,25 +37,10 @@ var valid  = new Boolean(true);
             validateNumberRange(1, 7, "doors")
         }
 
-//TODO: fix that currently only accept first option
         //validate radio buttons for fuel and type of car
-        if(document.getElementById('fuel').checked){
-            document.getElementById("fuelError").innerHTML = "";
-        }
-        else{
-            document.getElementById("fuelError").innerHTML = "Select Fuel type";
-            document.getElementById("fuelError").style.backgroundColor = "#ff0000";
-            valid=false;
-        }
-        if(document.getElementById('type').checked){
-            document.getElementById("typeError").innerHTML = "";
-        }
-        else{
-            document.getElementById("typeError").innerHTML = "Select Car type";
-            document.getElementById("typeError").style.backgroundColor = "#ff0000";
-            valid=false;
-        }
-//TODO: fix that
+        validateCarType();
+        validateFuel();
+
         //checks if either phone or email were entered
         //if both were not entered
         if ((!validateField("email", false))&&(!validateField("phone", false))){
@@ -122,8 +107,8 @@ var valid  = new Boolean(true);
         }
     }
 //------------------------------------------------------------------------------------------
-    //Method takes two parameters id is the name of the field, fail is controlling paramter to
-    //allow method to fail the form (vail =false)
+    //Method takes two parameters id is the name of the field, fail is controlling parameter to
+    //allow method to fail the form (valid = false)
     //checks if the input was detected in selected field if it was background
     //is changed to green if not red
     //return are used to determined if there is value to check for year, email attributes
@@ -155,4 +140,33 @@ var valid  = new Boolean(true);
             if(theEvent.preventDefault) theEvent.preventDefault();
         }
     }
+//------------------------------------------------------------------------------------------
+    //validates if car type was selected
+    function validateCarType() {
+        if ((document.getElementById("saloon").checked == true)||(document.getElementById("estate").checked == true)||
+            (document.getElementById("coupe").checked == true)||(document.getElementById("hatchback").checked == true)||
+            (document.getElementById("7-seater").checked == true))
+        {
 
+                document.getElementById("typeError").innerHTML = "";
+        }
+        else {
+            document.getElementById("typeError").innerHTML = "Select Car type";
+            document.getElementById("typeError").style.backgroundColor = "#ff0000";
+            valid = false;
+        }
+    }
+//------------------------------------------------------------------------------------------
+    //validates if fuel type was selected
+    function validateFuel() {
+        if ((document.getElementById("petrol").checked == true)||(document.getElementById("diesel").checked == true)||
+            (document.getElementById("gas").checked == true)||(document.getElementById("electric").checked == true))
+        {
+            document.getElementById("fuelError").innerHTML = "";
+        }
+        else {
+            document.getElementById("fuelError").innerHTML = "Select fuel type";
+            document.getElementById("fuelError").style.backgroundColor = "#ff0000";
+            valid = false;
+        }
+    }

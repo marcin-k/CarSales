@@ -41,15 +41,15 @@ else {
                 <dt>Type:</dt><p id=\"typeError\"></p>
                     <dd> 
                         <label>Saloon</label>
-                        <input type='radio' name='type' id='type' value='saloon'>
+                        <input type='radio' name='type' id='saloon' value='saloon'>
                         <label>Estate</label>
-                        <input type='radio' name='type' id='type' value='estate'>
+                        <input type='radio' name='type' id='estate' value='estate'>
                         <label>Coupe</label>
-                        <input type='radio' name='type' id='type' value='coupe'>
+                        <input type='radio' name='type' id='coupe' value='coupe'>
                         <label>Hatchback</label>
-                        <input type='radio' name='type' id='type' value='hatchback'>  
+                        <input type='radio' name='type' id='hatchback' value='hatchback'>  
                         <label>7-seater</label>
-                        <input type='radio' name='type' id='type' value='7-seater'>
+                        <input type='radio' name='type' id='7-seater' value='7-seater'>
                     </dd>
                 <dt>Doors:</dt><dd> <input type='text' id='doors' onkeypress='validateForLettersOrNumbersOnly(event, /^[1-7]|\1/)' value=$doors>
                                     <p id=\"doorsError\"></p></dd>
@@ -57,13 +57,13 @@ else {
                 <dt>Fuel:</dt><p id=\"fuelError\"></p>
                     <dd>
                         <label>Petrol</label>
-                        <input type='radio' name='fuel' id='fuel' value='petrol'>
+                        <input type='radio' name='fuel' id='petrol' value='petrol'>
                         <label>Diesel</label>
-                        <input type='radio' name='fuel' id='fuel' value='diesel'>
+                        <input type='radio' name='fuel' id='diesel' value='diesel'>
                         <label>Gas</label>
-                        <input type='radio' name='fuel' id='fuel' value='gas'>
+                        <input type='radio' name='fuel' id='gas' value='gas'>
                         <label>Electric</label>
-                        <input type='radio' name='fuel' id='fuel' value='electric'>  
+                        <input type='radio' name='fuel' id='electric' value='electric'>  
                     </dd>
                 <dt>Email:</dt><dd> <input type='text' id='email' value=$email><p id=\"emailError\"></p></dd>
                 <dt>Phone:</dt><dd> <input type='text' id='phone' onkeypress='validateForLettersOrNumbersOnly(event, /[0-9]|/)' 
