@@ -20,14 +20,20 @@ else {
     if(isset($_POST['update'])){
         updatePassword($_POST['username'], $_POST['pass2']);
     }
+    elseif(isset($_POST['newRecord'])){
+        echo $_POST['id'];
+    }
+
     echo "
               <main>
                   <section class=\"full center widget\" >
                   <form  action ='index.php' method = \"post\" enctype = \"multipart/form-data\">
-                    <input name='username' value=".$_POST['username']." hidden>
-                    <input name='pass' value=".$_POST['pass2']." hidden>";
+                    <input name='username' value=".$_POST['username']." hidden>";
+
                     if(isset($_POST['update'])){
+                        echo "<input name='pass' value=".$_POST['pass2']." hidden>";
                         echo "<h3>Your password has been updated</h3>";
+
                     }
                     //TODO: check for update record, deletion, new record
 

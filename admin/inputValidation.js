@@ -5,8 +5,9 @@
 var valid  = new Boolean(true);
 
     function validateInput () {
+        valid=true;
         //validate id
-        if(validateField("id")){
+        if(validateField("id", true)){
             var id = document.getElementById("id").value;
                 if(/[a-zA-Z]+$/.test(id)){
                     document.getElementById("id").style.backgroundColor = "#99ff99";
@@ -14,28 +15,29 @@ var valid  = new Boolean(true);
                 else{
                     document.getElementById("id").style.backgroundColor = "#ff0000";
                     document.getElementById("idError").innerHTML = "ID is invalid, please make sure the id contains letters only";
+                    valid=false;
                 }
         };
 
         //validate manufacturer
-        validateField("make");
+        validateField("make", true);
 
         //validate model
-        validateField("model");
+        validateField("model", true);
 
         //validate if not empty
-        if(validateField("year")){
+        if(validateField("year", true)){
             //validate year within range
             validateNumberRange(1960, 2016, "year")
         }
 
         //validate number of doors
-        if(validateField("doors")){
+        if(validateField("doors", true)){
             //validate doors within range
             validateNumberRange(1, 7, "doors")
         }
 
-
+//TODO: fix that currently only accept first option
         //validate radio buttons for fuel and type of car
         if(document.getElementById('fuel').checked){
             document.getElementById("fuelError").innerHTML = "";
@@ -49,14 +51,14 @@ var valid  = new Boolean(true);
             document.getElementById("typeError").innerHTML = "";
         }
         else{
-            document.getElementById("typeError").innerHTML = "Select Fuel type";
+            document.getElementById("typeError").innerHTML = "Select Car type";
             document.getElementById("typeError").style.backgroundColor = "#ff0000";
             valid=false;
         }
-
+//TODO: fix that
         //checks if either phone or email were entered
         //if both were not entered
-        if ((!validateField("email"))&&(!validateField("phone"))){
+        if ((!validateField("email", false))&&(!validateField("phone", false))){
             valid = false;
             document.getElementById("email").style.backgroundColor = "#ff0000";
             document.getElementById("phone").style.backgroundColor = "#ff0000";
@@ -65,13 +67,13 @@ var valid  = new Boolean(true);
         }
         else{
             //if only email was entered
-            if((validateField("email"))&&(!validateField("phone"))) {
+            if((validateField("email",false))&&(!validateField("phone", false))) {
                 validateEmailAddress(document.getElementById("email").value);
                 document.getElementById("phone").style.backgroundColor = "#99ff99";
                 document.getElementById("phoneError").innerHTML = "";
             }
             //if only phone number was entered
-            else if((!validateField("email"))&&(validateField("phone"))) {
+            else if((!validateField("email", false))&&(validateField("phone", false))) {
                 document.getElementById("phone").style.backgroundColor = "#99ff99";
                 document.getElementById("email").style.backgroundColor = "#99ff99";
                 document.getElementById("emailError").innerHTML = "";
@@ -120,13 +122,17 @@ var valid  = new Boolean(true);
         }
     }
 //------------------------------------------------------------------------------------------
+    //Method takes two parameters id is the name of the field, fail is controlling paramter to
+    //allow method to fail the form (vail =false)
     //checks if the input was detected in selected field if it was background
     //is changed to green if not red
     //return are used to determined if there is value to check for year, email attributes
-    function validateField(id) {
+    function validateField(id, fail) {
         var idError =id+"Error";
         if (document.getElementById(id).value == "") {
-            valid = false;
+            if(fail==true){
+                valid = false;
+            }
             document.getElementById(id).style.backgroundColor = "#ff0000";
             document.getElementById(idError).innerHTML = "Please enter "+id;
             return false;
