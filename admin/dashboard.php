@@ -10,27 +10,36 @@ function getDashboard($username, $password)
         <section>
             <h3>Dashboard</h3>
             <h4>Welcome $username</h4>
-            
-            <form form name=\"type\" class =\"\" action=\"add_update_item.php\" method=\"POST\">
+
+            <form form name=\"type\" class =\"small\" action=\"add_update_item.php\" method=\"POST\">
                 <input name='username' value=$username hidden>
                 <input name='pass' value=$password hidden>
-                
-                <button class=\"small\">Add new Car</button>
+
+                <button class=\"full\">
+                  <i class=\"fa fa-plus-square-o big-icon\" aria-hidden=\"true\"></i>
+                  Add new Car
+                </button>
             </form>
-            
-            <form form name=\"type\" class =\"\" action=\"edit_existing.php\" method=\"POST\">
+
+            <form form name=\"type\" class =\"small\" action=\"edit_existing.php\" method=\"POST\">
                 <input name='username' value=$username hidden>
                 <input name='pass' value=$password hidden>
-                <button class=\"small\">Update Existing</button>
+                <button class=\"full\">
+                <i class=\"fa fa-pencil-square-o big-icon\" aria-hidden=\"true\"></i>
+                Update Existing
+              </button>
             </form>
-            
-            <form form name=\"type\" class =\"\" action=\"settings.php\" method=\"POST\">
+
+            <form form name=\"type\" class =\"small\" action=\"settings.php\" method=\"POST\">
                 <input name='username' value=$username hidden>
                 <input name='pass' value=$password hidden>
-                <button class=\"small\">Settings</button>
+                <button class=\"full\">
+                  <i class=\"fa fa-cog big-icon\" aria-hidden=\"true\"></i>
+                Settings
+                </button>
             </form>
-           
-            
+
+
         </section>
     </main>
     ";

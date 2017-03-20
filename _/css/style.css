@@ -3467,3 +3467,8 @@ video {
 #expand {
   color: #739483;
   cursor: pointer; }
+
+/* line 271, ../components/sass/style.scss */
+.big-icon {
+  display: block;
+  font-size: 10em; }

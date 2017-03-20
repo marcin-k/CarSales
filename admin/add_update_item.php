@@ -28,10 +28,11 @@ else {
         <main >
           <section >
             <h3 > Add new car / update car </h3 >
-            <form name='addForm' onSubmit='return validateInput()' method='post' action ='confirmationScreen.php' >
+            <form class=\"widget\" name='addForm' onSubmit='return validateInput()' method='post' action ='confirmationScreen.php' >
+            <section class=\"equal\">
                 <input name='username' value=".$_POST['username']." hidden>
                 <input name='pass' value=".$_POST['pass']." hidden>
-            
+
                 <dl class=\"\">
                 <dt>ID:</dt><dd> <input type='text' id='id' name='id' value=$id><p id=\"idError\"></p></dd>
                 <dt>Manufacturer:</dt><dd> <input type='text' id='make'><p id=\"makeError\"></p></dd>
@@ -39,7 +40,7 @@ else {
                 <dt>Colour:</dt><dd> <input type='text'></dd>
                 <dt>Year:</dt><dd> <input type='number' id='year' ><p id=\"yearError\"></p></dd>
                 <dt>Type:</dt><p id=\"typeError\"></p>
-                    <dd> 
+                    <dd>
                         <label>Saloon</label>
                         <input type='radio' name='type' id='saloon' value='saloon'>
                         <label>Estate</label>
@@ -47,12 +48,15 @@ else {
                         <label>Coupe</label>
                         <input type='radio' name='type' id='coupe' value='coupe'>
                         <label>Hatchback</label>
-                        <input type='radio' name='type' id='hatchback' value='hatchback'>  
+                        <input type='radio' name='type' id='hatchback' value='hatchback'>
                         <label>7-seater</label>
                         <input type='radio' name='type' id='7-seater' value='7-seater'>
                     </dd>
                 <dt>Doors:</dt><dd> <input type='text' id='doors' onkeypress='validateForLettersOrNumbersOnly(event, /^[1-7]|\1/)' value=$doors>
                                     <p id=\"doorsError\"></p></dd>
+                </section>
+                <section class=\"equal\">
+
                 <dt>Engine:</dt><dd> <input type='text'></dd>
                 <dt>Fuel:</dt><p id=\"fuelError\"></p>
                     <dd>
@@ -63,10 +67,10 @@ else {
                         <label>Gas</label>
                         <input type='radio' name='fuel' id='gas' value='gas'>
                         <label>Electric</label>
-                        <input type='radio' name='fuel' id='electric' value='electric'>  
+                        <input type='radio' name='fuel' id='electric' value='electric'>
                     </dd>
                 <dt>Email:</dt><dd> <input type='text' id='email' value=$email><p id=\"emailError\"></p></dd>
-                <dt>Phone:</dt><dd> <input type='text' id='phone' onkeypress='validateForLettersOrNumbersOnly(event, /[0-9]|/)' 
+                <dt>Phone:</dt><dd> <input type='text' id='phone' onkeypress='validateForLettersOrNumbersOnly(event, /[0-9]|/)'
                                            value=$phone><p id=\"phoneError\"></p></dd>
                 <dt>Price:</dt><dd> <input type='text' id='price' onkeypress='validateForLettersOrNumbersOnly(event, /[0-9]|/)'
                                            value=$price></dd>
@@ -74,7 +78,8 @@ else {
 
                 </dl>
                 <!-- FIX THIS FOR UPDATE-->
-                <input name='addRecord' value='addRecord' hidden>
+                <input name='newRecord' value='newRecord' hidden>
+                </section>
                 <button type='submit'>Add</button>
             </form >
           </section >
