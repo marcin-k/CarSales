@@ -17,12 +17,27 @@ if(!isset($_POST['username'])) {
 
 //for logged-in users display the page
 else {
-    if(isset($_POST['update'])){
+    //if user coming from update password page
+    if(isset($_POST['updatePassword'])){
         updatePassword($_POST['username'], $_POST['pass2']);
     }
-    elseif(isset($_POST['addRecord'])){
+    //if user coming to add new record
+    elseif(isset($_POST['newRecord'])){
+        //TODO: add record to db
         echo $_POST['id'];
     }
+    //is user is going to update / delete record
+    elseif(isset($_POST['updateDelete'])){
+        //TODO: update record in db
+        if($_POST['updateDelete']=='update'){
+            echo $_POST['id'];
+        }
+        //TODO: delete record
+        elseif ($_POST['updateDelete']=='delete'){
+            echo $_POST['id'];
+        }
+    }
+
 
     echo "
               <main>
@@ -30,14 +45,24 @@ else {
                   <form  action ='index.php' method = \"post\" enctype = \"multipart/form-data\">
                     <input name='username' value=".$_POST['username']." hidden>";
 
-                    if(isset($_POST['update'])){
+                    if(isset($_POST['updatePassword'])){
                         echo "<input name='pass' value=".$_POST['pass2']." hidden>";
                         echo "<h3>Your password has been updated</h3>";
                     }
-                    if(isset($_POST['addRecord'])){
+                    elseif(isset($_POST['newRecord'])){
                         echo "<input name='pass' value=".$_POST['pass']." hidden>";
+                        echo "New record";
                     }
-                    //TODO: check for update record, deletion, new record
+                    elseif(isset($_POST['updateDelete'])){
+                        if($_POST['updateDelete']=='update'){
+                            echo "<h3>Updating</h3>";
+                            echo "<input name='pass' value=".$_POST['pass']." hidden>";
+                        }
+                        elseif ($_POST['updateDelete']=='delete'){
+                            echo "<h3>Deleting</h3>";
+                            echo "<input name='pass' value=".$_POST['pass']." hidden>";
+                        }
+                    }
 
 
     echo "        <button type = \"submit\" name='logged' value='false'> Back to Dashboard</button>
@@ -46,8 +71,6 @@ else {
               </main>
               ";
 }
-
-
 
 //--GET FOOTER-
 include 'inc/footer.php';

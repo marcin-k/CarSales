@@ -98,3 +98,41 @@ function updatePassword($username, $newPass){
     $updateQuery = "UPDATE `CarSales`.`Admins` SET `password`='$newPass' WHERE `login`='$username'";
     executeQuery($updateQuery, "CarSales");
 }
+
+
+//********************** Displays list of cars to edit *********************
+function displayListOfCars(){
+    $getAllCars = "SELECT * FROM CarSales.UsedCars";
+    $resultCars = executeQuery($getAllCars, "CarSales");
+    if (mysqli_num_rows($resultCars) > 0) {
+//TODO: form have to go to add_update_item.php first then to confirmation
+        echo "<form name='type' class ='feature equal center' action='confirmationScreen.php' method='POST'>
+                <input name='username' value=".$_POST['username']." hidden>
+                <input name='pass' value=".$_POST['pass']." hidden>";
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($resultCars)) {
+
+            //-------Cell element for edit_existing.php page ----------------------
+            echo "<li class='widget'>
+                          <ul>
+                            <li>
+                              <h4>
+                                <a href=\"product.php?id=".$row['id']."\">
+                                        $row[manufacturer]"." "."$row[model]
+                                        "." "."$row[colour]"." "."$row[year]"." "."$row[type]
+                                </a>
+                              </h4>
+                              <input name='id' value='".$row['id']."' hidden>
+                              <input type='submit' name='updateDelete' value='update'>
+                              <input type='submit' name='updateDelete' value='delete'>
+                            </li>
+                          </ul>
+                        </li>";
+            //-------------------------------------------------------------
+        }
+        echo "</form>";
+    }
+    else {
+        echo "0 results";
+    }
+}

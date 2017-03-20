@@ -1,26 +1,26 @@
 <?php
     include 'inc/header.php';
     include "admin_db_operations.php";
+
+
+//<!--GET HEADER-->
+//if user is not logged in but just entered the url redirect to login page
+if(!isset($_POST['username'])) {
+    header('Location: index.php');
+}
+else{
+    echo "
+        <main>
+          <section>
+            <h3>Existing cars</h3>
+            <ol>";
+              // Below html is defined in admin_db_operations.php in lines 118 to 132
+              displayListOfCars();
+    echo "  </ol>
+          </section>
+        </main>";
+}
+
+//<!--GET FOOTER-->
+include 'inc/footer.php';
 ?>
-<!--GET HEADER-->
-
-
-<main>
-  <section>
-    <h3>Existing cars</h3>
-    <ol>
-      <li>Car1
-        <a href="">
-          <!-- Opel Corsa 2015 -> add_edit_item.php
-          Ford Focus 2011  -->
-        </a>
-      </li>
-      <li>Car2</li>
-      <li>Car3</li>
-    </ol>
-  </section>
-</main>
-
-
-<!--GET FOOTER-->
-<?php include 'inc/footer.php'; ?>
