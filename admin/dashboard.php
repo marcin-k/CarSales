@@ -10,27 +10,27 @@ function getDashboard($username, $password)
         <section>
             <h3>Dashboard</h3>
             <h4>Welcome $username</h4>
-            
-            <form form name=\"type\" class =\"\" action=\"add_update_item.php\" method=\"POST\">
+
+            <form form name=\"type\" class =\"small\" action=\"add_update_item.php\" method=\"POST\">
                 <input name='username' value=$username hidden>
                 <input name='pass' value=$password hidden>
-                
-                <button class=\"small\">Add new Car</button>
+
+                <button class=\"full\">Add new Car</button>
             </form>
-            
-            <form form name=\"type\" class =\"\" action=\"edit_existing.php\" method=\"POST\">
+
+            <form form name=\"type\" class =\"small\" action=\"edit_existing.php\" method=\"POST\">
                 <input name='username' value=$username hidden>
                 <input name='pass' value=$password hidden>
-                <button class=\"small\">Update Existing</button>
+                <button class=\"full\">Update Existing</button>
             </form>
-            
-            <form form name=\"type\" class =\"\" action=\"settings.php\" method=\"POST\">
+
+            <form form name=\"type\" class =\"small\" action=\"settings.php\" method=\"POST\">
                 <input name='username' value=$username hidden>
                 <input name='pass' value=$password hidden>
-                <button class=\"small\">Settings</button>
+                <button class=\"full\">Settings</button>
             </form>
-           
-            
+
+
         </section>
     </main>
     ";
