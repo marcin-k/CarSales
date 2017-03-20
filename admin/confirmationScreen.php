@@ -20,7 +20,7 @@ else {
     if(isset($_POST['update'])){
         updatePassword($_POST['username'], $_POST['pass2']);
     }
-    elseif(isset($_POST['newRecord'])){
+    elseif(isset($_POST['addRecord'])){
         echo $_POST['id'];
     }
 
@@ -33,7 +33,9 @@ else {
                     if(isset($_POST['update'])){
                         echo "<input name='pass' value=".$_POST['pass2']." hidden>";
                         echo "<h3>Your password has been updated</h3>";
-
+                    }
+                    if(isset($_POST['addRecord'])){
+                        echo "<input name='pass' value=".$_POST['pass']." hidden>";
                     }
                     //TODO: check for update record, deletion, new record
 

@@ -74,7 +74,7 @@ else {
 
                 </dl>
                 <!-- FIX THIS FOR UPDATE-->
-                <input name='newRecord' value='newRecord' hidden>
+                <input name='addRecord' value='addRecord' hidden>
                 <button type='submit'>Add</button>
             </form >
           </section >
