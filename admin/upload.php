@@ -1,7 +1,7 @@
 
 <?php
 
-    $filesDir = "../res/img/";
+    $filesDir = "../app/img/";
     $file = $filesDir . basename($_FILES["fileToUpload"]["name"]);
     $fileExtension = pathinfo($file,PATHINFO_EXTENSION);
     $okToUpload = true;

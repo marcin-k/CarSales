@@ -14,7 +14,9 @@
 		
 		<div class="wrap">
 			<div class="logo">
-				<a href="#">LOGO</a>
+
+                <a href="index.php">LOGO</a>
+
 			</div>
 		
 			<div class="right">

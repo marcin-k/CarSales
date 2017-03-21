@@ -11,7 +11,7 @@ function executeQuery($query, $schema){
     $conn = mysqli_connect('localhost', 'root', '', $schema);
     // Check connection
     if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+        die("<h2>DB Connection failed: " . mysqli_connect_error())."</h2>";
     }
     $result = mysqli_query($conn, $query);
     //if((!$result)){
@@ -60,7 +60,6 @@ function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc,
         executeQuery($addCar, "CarSales");
         echo "<li>
                 Added Successfully -  '$id', '$manufacturer', '$model'
-              
               </li>
         ";
     }
@@ -96,7 +95,8 @@ function getAllCarsInDB(){
 
 function updatePassword($username, $newPass){
     $updateQuery = "UPDATE `CarSales`.`Admins` SET `password`='$newPass' WHERE `login`='$username'";
-    executeQuery($updateQuery, "CarSales");
+    //
+    return executeQuery($updateQuery, "CarSales");
 }
 
 
@@ -106,31 +106,32 @@ function displayListOfCars(){
     $resultCars = executeQuery($getAllCars, "CarSales");
     if (mysqli_num_rows($resultCars) > 0) {
 //TODO: form have to go to add_update_item.php first then to confirmation
-        echo "<form name='type' class ='feature equal center' action='confirmationScreen.php' method='POST'>
-                <input name='username' value=".$_POST['username']." hidden>
-                <input name='pass' value=".$_POST['pass']." hidden>";
+
         // output data of each row
         while ($row = mysqli_fetch_assoc($resultCars)) {
 
             //-------Cell element for edit_existing.php page ----------------------
+            echo "<form name='type' class ='feature equal center' action='confirmationScreen.php' method='POST'>
+                <input name='username' value=".$_POST['username']." hidden>
+                <input name='pass' value=".$_POST['pass']." hidden>";
             echo "<li class='widget'>
                           <ul>
-                            <li>
+                            
                               <h4>
-                                <a href=\"product.php?id=".$row['id']."\">
+                                ".$row['id']." 
                                         $row[manufacturer]"." "."$row[model]
-                                        "." "."$row[colour]"." "."$row[year]"." "."$row[type]
-                                </a>
-                              </h4>
+                                        "." "."$row[colour]"." "."$row[year]"." "."$row[type].
+                              </h4>  
                               <input name='id' value='".$row['id']."' hidden>
                               <input type='submit' name='updateDelete' value='update'>
                               <input type='submit' name='updateDelete' value='delete'>
-                            </li>
+                            
                           </ul>
                         </li>";
+            echo "</form>";
             //-------------------------------------------------------------
         }
-        echo "</form>";
+
     }
     else {
         echo "0 results";
