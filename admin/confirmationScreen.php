@@ -13,7 +13,7 @@ include "admin_db_operations.php";
 //if user is not logged in but just entered the url redirect to login page
 if(!isset($_POST['username'])) {
     header('Location: index.php');
-}
+}//
 
 //for logged-in users display the page
 else {
