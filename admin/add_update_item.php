@@ -88,7 +88,7 @@ else {
                         <input type='radio' name='type' id='7-seater' value='7-seater' "; if($type=='7-seater'){ echo "checked"; }
                         echo ">
                     </dd>
-                <dt>Doors:</dt><dd> <input type='text' id='doors' name='doors' 
+                <dt>Doors:</dt><dd> <input type='text' id='doors' name='doors'
                                             onkeypress='validateForLettersOrNumbersOnly(event, /^[1-7]|\1/)' value=$doors>
                                     <p id=\"doorsError\"></p></dd>
                 </section>
@@ -102,7 +102,7 @@ else {
                         echo ">
                         <label>Diesel</label>
                         <input type='radio' name='fuel' id='diesel' value='diesel' "; if($fuel=='diesel'){ echo 'checked'; }
-                        echo "> 
+                        echo ">
                         <label>Gas</label>
                         <input type='radio' name='fuel' id='gas' value='gas' "; if($fuel=='gas'){ echo 'checked'; }
                         echo ">
@@ -130,6 +130,10 @@ else {
                           <button type='submit'>Add</button>";
                 }
     echo "      </form >
+    <form action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\">
+      <input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\">
+      <input type=\"submit\" value=\"Upload Image\" name=\"submit\">
+    </form>
           </section >
         </main >
     ";
