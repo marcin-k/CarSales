@@ -6,18 +6,44 @@
 
 <?php
 
-$id = "";
-$make="";
-$model="";
-$year=  "";
-$doors= "";
-$email = "";
-$phone = "";
-$price = "";
-$doors ="";
-$desc = "";
-$colour="";
-$cc="";
+//is user is going to update
+if(isset($_POST['updateDelete'])){
+    //sets the values in the fields
+    $id = $_POST['id'];
+    $make= getValue($id, 'manufacturer');
+    $model=getValue($id, 'model');
+    $year=  getValue($id, 'year');
+    $doors= getValue($id, 'doors');
+    $email = getValue($id, 'email');
+    $phone = getValue($id, 'phone');
+    $price = getValue($id, 'price');
+    $doors =getValue($id, 'doors');
+    $desc = getValue($id, 'description');
+    $colour=getValue($id, 'colour');
+    $cc=getValue($id, 'cc');
+    //TODO: set value in the form
+    $type=getValue($id, 'type');
+    $fuel=getValue($id, 'fuel');
+}
+else{
+    $id = "";
+    $make="";
+    $model="";
+    $year=  "";
+    $doors= "";
+    $email = "";
+    $phone = "";
+    $price = "";
+    $doors ="";
+    $desc = "";
+    $colour="";
+    $cc="";
+    $type="";
+    $fuel="";
+}
+
+
+
 
 
 //if user is not logged in but just entered the url redirect to login page
@@ -47,15 +73,20 @@ else {
                 <dt>Type:</dt><p id=\"typeError\"></p>
                     <dd>
                         <label>Saloon</label>
-                        <input type='radio' name='type' id='saloon' value='saloon'>
+                        <input type='radio' name='type' id='saloon' value='saloon' "; if($type=='saloon'){ echo "checked"; }
+                        echo ">
                         <label>Estate</label>
-                        <input type='radio' name='type' id='estate' value='estate'>
+                        <input type='radio' name='type' id='estate' value='estate' "; if($type=='estate'){ echo "checked"; }
+                        echo ">
                         <label>Coupe</label>
-                        <input type='radio' name='type' id='coupe' value='coupe'>
+                        <input type='radio' name='type' id='coupe' value='coupe' "; if($type=='coupe'){ echo "checked"; }
+                        echo ">
                         <label>Hatchback</label>
-                        <input type='radio' name='type' id='hatchback' value='hatchback'>
+                        <input type='radio' name='type' id='hatchback' value='hatchback' "; if($type=='hatchback'){ echo "checked"; }
+                        echo ">
                         <label>7-seater</label>
-                        <input type='radio' name='type' id='7-seater' value='7-seater'>
+                        <input type='radio' name='type' id='7-seater' value='7-seater' "; if($type=='7-seater'){ echo "checked"; }
+                        echo ">
                     </dd>
                 <dt>Doors:</dt><dd> <input type='text' id='doors' name='doors' 
                                             onkeypress='validateForLettersOrNumbersOnly(event, /^[1-7]|\1/)' value=$doors>
@@ -67,13 +98,17 @@ else {
                 <dt>Fuel:</dt><p id=\"fuelError\"></p>
                     <dd>
                         <label>Petrol</label>
-                        <input type='radio' name='fuel' id='petrol' value='petrol'>
+                        <input type='radio' name='fuel' id='petrol' value='petrol' "; if($fuel=='petrol'){ echo 'checked'; }
+                        echo ">
                         <label>Diesel</label>
-                        <input type='radio' name='fuel' id='diesel' value='diesel'>
+                        <input type='radio' name='fuel' id='diesel' value='diesel' "; if($fuel=='diesel'){ echo 'checked'; }
+                        echo "> 
                         <label>Gas</label>
-                        <input type='radio' name='fuel' id='gas' value='gas'>
+                        <input type='radio' name='fuel' id='gas' value='gas' "; if($fuel=='gas'){ echo 'checked'; }
+                        echo ">
                         <label>Electric</label>
-                        <input type='radio' name='fuel' id='electric' value='electric'>
+                        <input type='radio' name='fuel' id='electric' value='electric' "; if($fuel=='electric'){ echo 'checked'; }
+                        echo ">
                     </dd>
                 <dt>Email:</dt><dd> <input type='text' id='email' name='email' value=$email><p id=\"emailError\"></p></dd>
                 <dt>Phone:</dt><dd> <input type='text' id='phone' name='phone' onkeypress='validateForLettersOrNumbersOnly(event, /[0-9]|/)'
@@ -82,12 +117,19 @@ else {
                                            value=$price></dd>
                 <dt>Description:</dt><dd> <input type='text' name='desc' value=$desc></dd>
 
-                </dl>
-                <!-- FIX THIS FOR UPDATE-->
-                <input name='newRecord' value='newRecord' hidden>
-                </section>
-                <button type='submit'>Add</button>
-            </form >
+                </dl>";
+
+   //<!-- FIX THIS FOR UPDATE-->
+                if(isset($_POST['updateDelete']))
+                    echo "<input name='updateDelete' value='update' hidden>
+                          </section>
+                          <button type='submit'>Update</button>";
+                else{
+                    echo "<input name='newRecord' value='newRecord' hidden>
+                          </section>
+                          <button type='submit'>Add</button>";
+                }
+    echo "      </form >
           </section >
         </main >
     ";

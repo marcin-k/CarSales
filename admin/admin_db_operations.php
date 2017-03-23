@@ -141,3 +141,17 @@ function displayListOfCars(){
         echo "0 results";
     }
 }
+
+//********************** Get a value of a given field for car with ID *********************
+function getValue($id, $attribute){
+    $getAttribute = "SELECT * FROM CarSales.UsedCars where id='$id'";
+    $result = executeQuery($getAttribute, "CarSales");
+    $value="";
+
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+            $value=$row[$attribute];
+        }
+
+    return $value;
+}
