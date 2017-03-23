@@ -1,6 +1,6 @@
 <?php include 'inc/header.php'; ?>
 <!--GET HEADER-->
-
+//test
 <main>
 	<section>
 		<form action="upload.php" method="post" enctype="multipart/form-data">

@@ -65,7 +65,7 @@ else {
                 <input name='pass' value=".$_POST['pass']." hidden>
 
                 <dl class=\"\">
-                <dt>ID:</dt><dd> <input type='text' id='id' name='id' value=$id><p id=\"idError\"></p></dd>
+                <dt>ID:</dt><dd> <input type='text' id='id' name='id' value=$id ><p id=\"idError\"></p></dd>
                 <dt>Manufacturer:</dt><dd> <input type='text' name='make' id='make' value=$make><p id=\"makeError\"></p></dd>
                 <dt>Model:</dt><dd><input type='text' id='model' name='model' value=$model><p id=\"modelError\"></p></dd>
                 <dt>Colour:</dt><dd> <input type='text' name='colour' value=$colour></dd>
@@ -115,7 +115,7 @@ else {
                                            value=$phone><p id=\"phoneError\"></p></dd>
                 <dt>Price:</dt><dd> <input type='text' id='price' name='price' onkeypress='validateForLettersOrNumbersOnly(event, /[0-9]|/)'
                                            value=$price></dd>
-                <dt>Description:</dt><dd> <input type='text' name='desc' value=$desc></dd>
+                <dt>Description:</dt><dd> <textarea name='desc'>$desc</textarea></dd>
 
                 </dl>";
 
