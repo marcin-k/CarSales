@@ -5,21 +5,7 @@
  * Date: 24/03/2017
  * Time: 23:55
  */
-//make sure all fields are set or set to null
-$id = ifEmptySetToNull('id');
-$phone = ifEmptySetToNull('phone');
-$type = ifEmptySetToNull('type');
-$fuel = ifEmptySetToNull('fuel');
-$make = ifEmptySetToNull('make');
-$model = ifEmptySetToNull('model');
-$year = ifEmptySetToNull('year');
-$doors = ifEmptySetToNull('doors');
-$email = ifEmptySetToNull('email');
-$price = ifEmptySetToNull('price');
-$cc = ifEmptySetToNull('cc');
-$desc = ifEmptySetToNull('desc');
-$colour = ifEmptySetToNull('colour');
-$oldID = ifEmptySetToNull('oldID');
+
 
 echo "
               <main>
@@ -65,15 +51,5 @@ echo "        <button type = \"submit\" name='logged' value='false'> Back to Das
                   </section >
               </main>
               ";
-//when creating new record set the value of the attribute to either
-//value provided or if not provided to null
-function ifEmptySetToNull($parameter){
-    //if value is not provided set it to null
-    if(!isset($_POST[$parameter])){
-        return null;
-    }
-    else{
-        return $_POST[$parameter];
-    }
-}
+
 ?>
