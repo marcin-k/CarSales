@@ -10,6 +10,7 @@
 if(isset($_POST['updateDelete'])){
     //sets the values in the fields
     $id = $_POST['id'];
+    $oldID = $_POST['id'];
     $make= getValue($id, 'manufacturer');
     $model=getValue($id, 'model');
     $year=  getValue($id, 'year');
@@ -27,6 +28,7 @@ if(isset($_POST['updateDelete'])){
 }
 else{
     $id = "";
+    $oldID = "";
     $make="";
     $model="";
     $year=  "";
@@ -42,10 +44,6 @@ else{
     $fuel="";
 }
 
-
-
-
-
 //if user is not logged in but just entered the url redirect to login page
 if(!isset($_POST['username'])) {
     header('Location: index.php');
@@ -59,10 +57,11 @@ else {
         <main >
           <section >
             <h3 > Add new car / update car </h3 >
-            <form class=\"widget\" name='addForm' onSubmit='return validateInput()' method='post' action ='confirmationScreen.php' >
+            <form class=\"widget\" name='addForm' onSubmit='return validateInput()' method='post' action ='confirmationScreen.php' enctype=\"multipart/form-data\">
             <section class=\"equal\">
-                <input name='username' value=".$_POST['username']." hidden>
-                <input name='pass' value=".$_POST['pass']." hidden>
+                <input name='username' value='".$_POST['username']."' hidden>
+                <input name='pass' value='".$_POST['pass']."' hidden>
+                <input name='oldID' value='".$oldID."' hidden>
 
                 <dl class=\"\">
                 <dt>ID:</dt><dd> <input type='text' id='id' name='id' value=$id ><p id=\"idError\"></p></dd>
@@ -116,7 +115,8 @@ else {
                 <dt>Price:</dt><dd> <input type='text' id='price' name='price' onkeypress='validateForLettersOrNumbersOnly(event, /[0-9]|/)'
                                            value=$price></dd>
                 <dt>Description:</dt><dd> <textarea name='desc'>$desc</textarea></dd>
-
+                <dt>Car Image:</dt><dd><input type='file' name='fileToUpload' id='fileToUpload'></dd>
+	 		   
                 </dl>";
 
    //<!-- FIX THIS FOR UPDATE-->
@@ -127,14 +127,10 @@ else {
                 else{
                     echo "<input name='newRecord' value='newRecord' hidden>
                           </section>
-                          <button type='submit'>Add</button>";
+                          <button type='submit' name='submit' value='submit'>Add</button>";
                 }
-    echo "      </form >
-    <form action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\">
-      <input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\">
-      <input type=\"submit\" value=\"Upload Image\" name=\"submit\">
-    </form>
-          </section >
+    echo "      </form>
+          </section>
         </main >
     ";
 }
