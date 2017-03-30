@@ -15,8 +15,8 @@
     else {
         echo "
             <script src=\"passwordUpdateValidation.js\"></script>
-            <h3>Settings</h3>
               <main>
+                <h3>Settings</h3>
                   <section class=\"full center widget\" >
                   <form onSubmit='return validateNewPassword()' action ='confirmationScreen.php' method = \"post\" enctype = \"multipart/form-data\">
                     <input name='username' value=".$_POST['username']." hidden>

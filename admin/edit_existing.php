@@ -12,7 +12,7 @@ else{
     echo "
         <main>
           <section>
-            <h3>Existing cars</h3>
+            <h3>List of all Cars</h3>
             <ol>";
               // Below html is defined in admin_db_operations.php in lines 118 to 132
               displayListOfCars();

@@ -44,44 +44,64 @@ function validateLogin($username, $password){
     }
     return $toReturn;
 }
-//******************************** Adds new car to DB ********************************
-function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone, $price, $desc){
+//*************************** Checks if ID is already in use *************************
+function isIdAlreadyUsed($id){
     //Converts id to uppercase
     $id = strtoupper($id);
     $checkId = "SELECT * FROM `CarSales`.`UsedCars` WHERE `id`='$id'";
     $result = executeQuery($checkId, "CarSales");
     //checks if the record with the provided id already exist in db
-    if(mysqli_num_rows($result) == 0){
-        //adds a record to db
-        $addCar = "INSERT INTO `CarSales`.`UsedCars` (`id`, `manufacturer`, `model`, `colour`,
-                    `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`, `price`, `description`) VALUES
-                    ('$id', '$manufacturer', '$model', '$colour', '$year', '$type',
-                     '$doors', '$cc', '$fuel', '$email', '$phone', '$price', '$desc')";
-        executeQuery($addCar, "CarSales");
-        echo "<li>
-                Added Successfully -  '$id', '$manufacturer', '$model'
-              </li>
-        ";
+    if(mysqli_num_rows($result) != 0){
+        return true;
     }
     else{
-        echo "Car with ID: ".$id." already exist in DB</br>";
+        return false;
     }
+}
+//******************************** Adds new car to DB ********************************
+function addCar($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone, $price, $desc){
+    //Converts id to uppercase
+    $id = strtoupper($id);
+    //adds a record to db
+    $addCar = "INSERT INTO `CarSales`.`UsedCars` (`id`, `manufacturer`, `model`, `colour`,
+              `year`, `type`, `doors`, `cc`, `fuel`, `email`, `phone`, `price`, `description`) VALUES
+               ('$id', '$manufacturer', '$model', '$colour', '$year', '$type',
+                '$doors', '$cc', '$fuel', '$email', '$phone', '$price', '$desc')";
+    executeQuery($addCar, "CarSales");
+    echo "<li>
+           Added Successfully -  '$id', '$manufacturer', '$model'
+          </li>
+        ";
 }
 
 //******************************** Delete a car from DB ********************************
 
 function deleteCar($id){
     $deleteQuery = "Delete from `CarSales`.`UsedCars` WHERE `id`='$id'";
-    executeQuery($deleteQuery, "CarSales");
+    $validateReturn = executeQuery($deleteQuery, "CarSales");
+    if($validateReturn==1){
+        return "Car was deleted successfully";
+    }
+    else{
+        return "An error occurred, please try again later";
+    }
 
 }
 //******************************** Update a record  ********************************
 
-function update($id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone){
-    $updateQuery = "UPDATE `CarSales`.`UsedCars` SET `manufacturer`='$manufacturer', `model`='$model',
+function update($oldID, $id , $manufacturer, $model, $colour, $year, $type, $doors, $cc, $fuel, $email, $phone, $price, $desc){
+    $updateQuery = "UPDATE `CarSales`.`UsedCars` SET `id`='$id', `manufacturer`='$manufacturer', `model`='$model',
                     `colour`='$colour', `year`='$year', `type`='$type', `doors`='$doors', `cc`='$cc',
-                    `fuel`='$fuel', `email`='$email', `phone`='$phone' WHERE `id`='$id'";
-    executeQuery($updateQuery, "CarSales");
+                    `fuel`='$fuel', `email`='$email', `phone`='$phone',`price`='$price', `description`='$desc'
+                     WHERE `id`='$oldID'";
+
+    $validateReturn =   executeQuery($updateQuery, "CarSales");
+    if($validateReturn==1){
+        return "Listing was updated";
+    }
+    else{
+        return "An error occurred, please try again later";
+    }
 }
 
 //******************************** Retrieves all cars from DB  ********************************
@@ -96,7 +116,13 @@ function getAllCarsInDB(){
 function updatePassword($username, $newPass){
     $updateQuery = "UPDATE `CarSales`.`Admins` SET `password`='$newPass' WHERE `login`='$username'";
     //
-    return executeQuery($updateQuery, "CarSales");
+    $validateReturn =  executeQuery($updateQuery, "CarSales");
+    if($validateReturn==1){
+        return "Password was updated";
+    }
+    else{
+        return "An error occurred, please try again later";
+    }
 }
 
 
