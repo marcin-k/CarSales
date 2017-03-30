@@ -25,10 +25,7 @@ $(document).ready(function () {
       }
 	})
 
-  // function showValue(newValue) {
-  // 	document.getElementById("rangeTxt").innerHTML=newValue;
-  // }
-
+  $('h1').addClass('fadeInUp animated')
 
   var holder = document.getElementById('holder'),
       tests = {

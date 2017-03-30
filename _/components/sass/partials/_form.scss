@@ -1,0 +1,40 @@
+form {
+  ul, .cars ul {
+    list-style-type: none;
+  }
+}
+
+input,
+select,
+textarea,
+label,
+button {
+  border: 0;
+  // color: $font-color-primary;
+  display: block;
+  margin: gutter() * 4;
+  outline: 0;
+  padding: .75em;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100% - gutter() * 8;
+
+  &:focus {
+    border-color: $font-color-primary;
+  }
+}
+
+.refine {
+  input,
+  select,
+  textarea,
+  label,
+  button {
+    border: 0;
+    // color: $font-color-primary;
+    display: inline-block;
+    margin: gutter();
+    padding: .5em;
+    width: 25% - gutter() * 4;
+  }
+}
