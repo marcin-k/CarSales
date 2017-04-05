@@ -137,28 +137,23 @@ function displayListOfCars(){
         while ($row = mysqli_fetch_assoc($resultCars)) {
 
             //-------Cell element for edit_existing.php page ----------------------
-            echo "<form name='type' class ='feature equal center' action='add_update_item.php' method='POST'>
-                        <li class='widget'>
-                          <ul>
-                              <h4>
-                                ".$row['id']." 
-                                        $row[manufacturer]"." "."$row[model]
-                                        "." "."$row[colour]"." "."$row[year]"." "."$row[type].
-                              </h4>  
-                              <input name='id' value='".$row['id']."' hidden>
-                                <input name='username' value=".$_POST['username']." hidden>
-                                <input name='pass' value=".$_POST['pass']." hidden>
-                              <input type='submit' name='updateDelete' value='update'>
-                  </form>
-                  <form name='type' class ='feature equal center' action='confirmationScreen.php' method='POST'>
+            echo "<li>
+                    <form name='type' action='add_update_item.php' method='POST'>
+                          ".$row['id']."
+                          $row[manufacturer]"." "."$row[model]
+                          "." "."$row[colour]"." "."$row[year]"." "."$row[type].
+                          <input name='id' value='".$row['id']."' hidden>
+                          <input name='username' value=".$_POST['username']." hidden>
+                          <input name='pass' value=".$_POST['pass']." hidden>
+                          <input type='submit' name='updateDelete' value='update' class=\"primary\">
+                          <form name='type' class ='feature equal center' action='confirmationScreen.php' method='POST'>
                                 <input name='id' value='".$row['id']."' hidden>
                                 <input name='username' value=".$_POST['username']." hidden>
                                 <input name='pass' value=".$_POST['pass']." hidden>
-                              <input type='submit' name='updateDelete' value='delete'>
-                            
-                          </ul>
-                        </li>";
-            echo "</form>";
+                              <input type='submit' name='updateDelete' value='delete' class=\"danger\">
+                          </form>
+                        </form>
+                      </li>";
             //-------------------------------------------------------------
         }
 

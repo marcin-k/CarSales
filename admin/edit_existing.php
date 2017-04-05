@@ -13,10 +13,10 @@ else{
         <main>
           <section>
             <h3>List of all Cars</h3>
-            <ol>";
+            <ul class=\"editForm\">";
               // Below html is defined in admin_db_operations.php in lines 118 to 132
               displayListOfCars();
-    echo "  </ol>
+    echo "  </ul>
           </section>
         </main>";
 }

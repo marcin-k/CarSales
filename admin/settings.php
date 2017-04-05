@@ -17,12 +17,11 @@
             <script src=\"passwordUpdateValidation.js\"></script>
               <main>
                 <h3>Settings</h3>
-                  <section class=\"full center widget\" >
-                  <form onSubmit='return validateNewPassword()' action ='confirmationScreen.php' method = \"post\" enctype = \"multipart/form-data\">
+                  <section class=\"full login center\" >
+                  <form class=\"large widget\" onSubmit='return validateNewPassword()' action ='confirmationScreen.php' method = \"post\" enctype = \"multipart/form-data\">
                     <input name='username' value=".$_POST['username']." hidden>
                     <input name='pass' value=".$_POST['pass']." hidden>
                     <input name='updatePassword' value='updatePassword' hidden>
-                    <h3>Update your password</h3>
                     <label for=\"pass1\"> New Password</label>
                     <input type = \"password\" name= \"pass1\" id='pass1' value = \"\" >
                     <label for=\"pass2\"> Confirm Password</label>

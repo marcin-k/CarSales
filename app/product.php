@@ -17,13 +17,13 @@
         //TODO: move css outside this file, change the styling so the buttons align next to one another
         echo "
         <form action=\"products.php\" method=\"post\">
-           
+
            <input name=\"make\" value='".getModelOrMakeBasedOnID($_GET['id'], 'manufacturer')."' hidden>
            <input name=\"model\" value='".getModelOrMakeBasedOnID($_GET['id'], 'model')."' hidden>
-           <input name=\"minYear\" value=\"--min year--\" hidden> 
+           <input name=\"minYear\" value=\"--min year--\" hidden>
            <input name=\"maxYear\" id=\"make\" class=\"carMake\" value=\"--max year--\" hidden>
-           <input name=\"maxPrice\" value=\"50000\" hidden> 
-    
+           <input name=\"maxPrice\" value=\"50000\" hidden>
+
             <button style='
               border:none;
               outline:none;
@@ -31,27 +31,29 @@
               cursor:pointer;
               color:#0000EE;
               padding:0;
+              margin: 0;
               text-decoration:underline;
               font-family:inherit;
-              font-size:inherit;' 
-              
+              font-size:inherit;'
+
             name =\"submit\" type=\"submit\" class='equal' value='make'>".getModelOrMakeBasedOnID($_GET['id'], 'manufacturer')."  \</button>
-            
-           
-            
+
+
+
             <button style='
               border:none;
               outline:none;
               background:none;
               cursor:pointer;
               color:#0000EE;
+              margin: 0;
               padding:0;
               text-decoration:underline;
               font-family:inherit;
-              font-size:inherit;' 
-              
+              font-size:inherit;'
+
             type=\"submit\" class='equal' value='model'>".getModelOrMakeBasedOnID($_GET['id'], 'model')."</button>
-           
+
         </form>
         ";
         //-----------------------------------------------------------------------------------------

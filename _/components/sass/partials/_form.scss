@@ -16,12 +16,16 @@ button {
   outline: 0;
   padding: .75em;
   text-decoration: none;
-  text-transform: capitalize;
   width: 100% - gutter() * 8;
 
   &:focus {
     border-color: $font-color-primary;
   }
+}
+input[type=radio], label {
+  width:auto;
+  display:inline;
+
 }
 
 .refine {
@@ -37,4 +41,66 @@ button {
     padding: .5em;
     width: 25% - gutter() * 4;
   }
+}
+
+label {
+  padding-left: 0em;
+}
+
+.admin {
+  input,
+  select,
+  textarea,
+  label,
+  button {
+    border: 0;
+    background: none;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    width: auto;
+
+    &:focus {
+      border-color: $font-color-primary;
+    }
+  }
+}
+
+section.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backend section {
+  padding-top: 0;
+
+    input[type="submit"] {
+      width: auto;
+      margin: auto;
+      display: inline-block;
+      padding: 2px;
+      background: none;
+      font-size: 1em;
+  }
+
+  .editForm{
+    li {
+      list-style: none;
+    }
+    form {
+      padding: 0;
+    }
+
+  }
+
+  .primary {
+    color: #5f9ea0;
+  }
+
+  .danger {
+    color: #e44d6a;
+  }
+
 }

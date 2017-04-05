@@ -8,6 +8,7 @@
 @import 'partials/variables';
 @import 'partials/mixins';
 @import 'partials/layout';
+@import "partials/form";
 
 html {
   font-size: 1.1em;
@@ -157,43 +158,7 @@ samp {
   font-family: 'Roboto mono', monospace;
 }
 
-input,
-select,
-textarea,
-label,
-button {
-  border: 0;
-  // color: $font-color-primary;
-  display: block;
-  margin: gutter() * 4;
-  outline: 0;
-  padding: .75em;
-  text-decoration: none;
-  text-transform: capitalize;
-  width: 100% - gutter() * 8;
 
-  &:focus {
-    border-color: $font-color-primary;
-  }
-}
-
-.refine {
-  input,
-  select,
-  textarea,
-  label,
-  button {
-    border: 0;
-    // color: $font-color-primary;
-    display: inline-block;
-    margin: gutter();
-    padding: .5em;
-    width: 25% - gutter() * 4;
-  }
-}
-label{
-  padding-left: 0em;
-}
 
 ul,
 ol {

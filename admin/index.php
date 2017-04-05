@@ -29,8 +29,8 @@
     function printForm($message){
         echo "
                 <main>
-                    <section class=\"full center widget\" >
-                        <form action = 'index.php' method = \"post\" enctype = \"multipart/form-data\" >";
+                    <section class=\"full center login\" >
+                        <form  class=\"large widget\" action = 'index.php' method = \"post\" enctype = \"multipart/form-data\" >";
 
                 //if user is visiting the page for the first time
                 if($message!=='null') {

@@ -10,7 +10,7 @@
 	</nav>
 
 	<div class="copy right">
-		&copy; <?php date_default_timezone_set('Europe/London'); echo date("Y"); ?>, Lorem ipsum
+		&copy; <?php date_default_timezone_set('Europe/London'); echo date("Y"); ?>, Thrive Motors.
 	</div>
 
 </footer>

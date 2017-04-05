@@ -112,7 +112,6 @@
 
           //if user just use the url or clicks the submit button without filling any fields
           else{
-              echo "<h2>All cars in DB</h2>";
               getAllCarsInDB();
           }
       ?>

@@ -8,7 +8,6 @@ function getDashboard($username, $password)
     echo "
     <main>
         <section>
-            <h3>Dashboard</h3>
             <h4>Welcome $username</h4>
 
             <form form name=\"type\" class =\"small\" action=\"add_update_item.php\" method=\"POST\">

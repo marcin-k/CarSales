@@ -17,10 +17,10 @@
         $loginAndPasswordAvailable=true;
     }
 ?>
-<body>
+<body class="backend">
 
-	<header>
-		
+	<header class="admin">
+
 		<div class="wrap">
 			<div class="logo">
                 <form action ='index.php' method = "post" enctype = "multipart/form-data">
@@ -30,10 +30,12 @@
                         echo "<input name='username' value='$username' hidden>
                               <input name='pass' value='$password' hidden>";
                     } ?>
-                    <button type = "submit" name='logged' > LOGO</button>
+                    <button type = "submit" name='logged' >
+                    				<img src="../app/img/logo.svg" alt="logo" />
+                    </button>
                 </form>
 			</div>
-		
+
 			<div class="right">
                 <!-- Brings user to login page-->
 					<a href="index.php">Log off</a>

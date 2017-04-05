@@ -17,7 +17,7 @@ $susy: (
 
 .wrap {
   @include container;
-  
+
   position: relative;
 }
 
@@ -216,6 +216,11 @@ article {
 
   p {
     margin-left: 2em;
+  }
+
+  form {
+    margin: 0;
+    padding: 0;
   }
 }
 
