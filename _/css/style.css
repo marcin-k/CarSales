@@ -5415,10 +5415,15 @@ article {
   clear: both; }
 
 /* line 264, ../components/sass/partials/_layout.scss */
+.padBot {
+  padding-top: 0;
+  padding-bottom: 3em; }
+
+/* line 269, ../components/sass/partials/_layout.scss */
 img {
   max-width: 100%; }
 
-/* line 270, ../components/sass/partials/_layout.scss */
+/* line 275, ../components/sass/partials/_layout.scss */
 body > footer {
   max-width: 1068px;
   margin-left: auto;
@@ -5430,10 +5435,10 @@ body > footer {
     content: " ";
     display: block;
     clear: both; }
-  /* line 274, ../components/sass/partials/_layout.scss */
+  /* line 279, ../components/sass/partials/_layout.scss */
   body > footer ul {
     padding: 0; }
-  /* line 278, ../components/sass/partials/_layout.scss */
+  /* line 283, ../components/sass/partials/_layout.scss */
   body > footer hr {
     width: 98.33333%;
     float: left;
@@ -5441,16 +5446,16 @@ body > footer {
     margin-right: 0.83333%;
     border: none;
     border-top: 1px solid #777; }
-  /* line 284, ../components/sass/partials/_layout.scss */
+  /* line 289, ../components/sass/partials/_layout.scss */
   body > footer nav {
     width: 48.33333%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%; }
-    /* line 286, ../components/sass/partials/_layout.scss */
+    /* line 291, ../components/sass/partials/_layout.scss */
     body > footer nav ul li {
       display: inline; }
-  /* line 293, ../components/sass/partials/_layout.scss */
+  /* line 298, ../components/sass/partials/_layout.scss */
   body > footer .madeby {
     width: 48.33333%;
     float: left;
@@ -5458,42 +5463,42 @@ body > footer {
     margin-right: 0.83333%;
     text-align: right; }
 
-/* line 301, ../components/sass/partials/_layout.scss */
+/* line 306, ../components/sass/partials/_layout.scss */
 #expanded {
   display: none; }
 
 @media (max-width: 1068px) {
-  /* line 308, ../components/sass/partials/_layout.scss */
+  /* line 313, ../components/sass/partials/_layout.scss */
   body > header, main, footer {
     padding-left: 3.33333%;
     padding-right: 3.33333%; } }
 @media (max-width: 680px) {
-  /* line 315, ../components/sass/partials/_layout.scss */
+  /* line 320, ../components/sass/partials/_layout.scss */
   .large, .equal, .small {
     width: 98.33333%;
     float: left;
     margin-left: 0.83333%;
     margin-right: 0.83333%; }
 
-  /* line 318, ../components/sass/partials/_layout.scss */
+  /* line 323, ../components/sass/partials/_layout.scss */
   body > header {
     padding-top: 15px;
     padding-bottom: 15px; }
-    /* line 321, ../components/sass/partials/_layout.scss */
+    /* line 326, ../components/sass/partials/_layout.scss */
     body > header .logo, body > header .menu {
       height: 48px; }
-      /* line 323, ../components/sass/partials/_layout.scss */
+      /* line 328, ../components/sass/partials/_layout.scss */
       body > header .logo img, body > header .logo svg, body > header .menu img, body > header .menu svg {
         height: 48px; }
 
-  /* line 329, ../components/sass/partials/_layout.scss */
+  /* line 334, ../components/sass/partials/_layout.scss */
   main {
     padding-top: 90px; }
 
-  /* line 333, ../components/sass/partials/_layout.scss */
+  /* line 338, ../components/sass/partials/_layout.scss */
   body > footer {
     margin-top: 30px; }
-    /* line 335, ../components/sass/partials/_layout.scss */
+    /* line 340, ../components/sass/partials/_layout.scss */
     body > footer span {
       display: none; } }
 /* line 2, ../components/sass/partials/_form.scss */
@@ -5563,16 +5568,26 @@ label {
   .admin button:focus {
     border-color: #777; }
 
-/* line 70, ../components/sass/partials/_form.scss */
+/* line 71, ../components/sass/partials/_form.scss */
+.contact input,
+.contact select,
+.contact textarea {
+  border: #999 1px solid;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-decoration: none; }
+
+/* line 82, ../components/sass/partials/_form.scss */
 section.login {
   display: flex;
   align-items: center;
   justify-content: center; }
 
-/* line 76, ../components/sass/partials/_form.scss */
+/* line 88, ../components/sass/partials/_form.scss */
 .backend section {
   padding-top: 0; }
-  /* line 79, ../components/sass/partials/_form.scss */
+  /* line 91, ../components/sass/partials/_form.scss */
   .backend section input[type="submit"] {
     width: auto;
     margin: auto;
@@ -5580,20 +5595,25 @@ section.login {
     padding: 2px;
     background: none;
     font-size: 1em; }
-  /* line 89, ../components/sass/partials/_form.scss */
+  /* line 101, ../components/sass/partials/_form.scss */
   .backend section .editForm li {
     list-style: none; }
-  /* line 92, ../components/sass/partials/_form.scss */
+  /* line 104, ../components/sass/partials/_form.scss */
   .backend section .editForm form {
     padding: 0; }
-  /* line 98, ../components/sass/partials/_form.scss */
+  /* line 110, ../components/sass/partials/_form.scss */
   .backend section .primary {
     color: #5f9ea0; }
-  /* line 102, ../components/sass/partials/_form.scss */
+  /* line 114, ../components/sass/partials/_form.scss */
   .backend section .danger {
     color: #e44d6a; }
 
-/* line 109, ../components/sass/partials/_form.scss */
+/* line 120, ../components/sass/partials/_form.scss */
+.noPadMarg {
+  padding: 0;
+  margin: 0; }
+
+/* line 125, ../components/sass/partials/_form.scss */
 .breadcrumbs {
   display: inline;
   border: none;
@@ -5840,3 +5860,7 @@ video {
 .big-icon {
   display: block;
   font-size: 10em; }
+
+/* line 243, ../components/sass/style.scss */
+.about li {
+  list-style: none; }

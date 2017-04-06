@@ -26,7 +26,7 @@ $(document).ready(function () {
 	})
 
   $('h1').addClass('fadeInUp animated')
-  $('main img').addClass('fadeIn animated')
+  $('section img').addClass('fadeIn animated')
 
 
 });

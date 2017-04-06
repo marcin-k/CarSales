@@ -7,7 +7,7 @@
 
 <!--MAIN START-->
 <main>
-	<section>
+	<section class="about">
   	<div class="full">
   		<h2 class="center">The expert car people</h2>
   		<p class="description center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

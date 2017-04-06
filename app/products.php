@@ -8,7 +8,7 @@
 
 <!--MAIN START-->
 <main>
-  <section>
+  <section class="padBot">
     <span id="expand" class="right">Refine search</span>
     <div id="expanded">
       <form action="products.php" class="refine" method="post">
