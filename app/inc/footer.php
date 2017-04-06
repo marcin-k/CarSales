@@ -6,7 +6,7 @@
 			<a href="index.php"><li>Find Car</li></a>
 			<a href="about.php"><li>About Us</li></a>
 			<a href="contact.php"><li>Contact</li></a>
-      <a href="admin/index.php"><li>Login</li></a>
+      <a href="../admin/index.php"><li>Login</li></a>
 		</ul>
 	</nav>
 
