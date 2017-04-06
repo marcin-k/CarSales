@@ -23,36 +23,14 @@
            <input name=\"minYear\" value=\"--min year--\" hidden>
            <input name=\"maxYear\" id=\"make\" class=\"carMake\" value=\"--max year--\" hidden>
            <input name=\"maxPrice\" value=\"50000\" hidden>
-
-            <button style='
-              border:none;
-              outline:none;
-              background:none;
-              cursor:pointer;
-              color:#0000EE;
-              padding:0;
-              margin: 0;
-              text-decoration:underline;
-              font-family:inherit;
-              font-size:inherit;'
-
-            name =\"submit\" type=\"submit\" class='equal' value='make'>".getModelOrMakeBasedOnID($_GET['id'], 'manufacturer')."  \</button>
+          <div style=\"margin-top:-26px;padding-bottom:7px;\">
+            >&nbsp;
+            <a ><button class=\"breadcrumbs\" type=\"submit\" value='make'>".getModelOrMakeBasedOnID($_GET['id'], 'manufacturer')."</button></a>&nbsp;>&nbsp;
 
 
 
-            <button style='
-              border:none;
-              outline:none;
-              background:none;
-              cursor:pointer;
-              color:#0000EE;
-              margin: 0;
-              padding:0;
-              text-decoration:underline;
-              font-family:inherit;
-              font-size:inherit;'
-
-            type=\"submit\" class='equal' value='model'>".getModelOrMakeBasedOnID($_GET['id'], 'model')."</button>
+            <a><button class=\"breadcrumbs\"  type=\"submit\" class='equal' value='model'>".getModelOrMakeBasedOnID($_GET['id'], 'model')."</button></a>
+          </div>
 
         </form>
         ";

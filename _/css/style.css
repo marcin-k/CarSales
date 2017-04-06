@@ -5593,6 +5593,17 @@ section.login {
   .backend section .danger {
     color: #e44d6a; }
 
+/* line 109, ../components/sass/partials/_form.scss */
+.breadcrumbs {
+  display: inline;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  width: auto;
+  margin: 0; }
+
 /* line 13, ../components/sass/style.scss */
 html {
   font-size: 1.1em; }
